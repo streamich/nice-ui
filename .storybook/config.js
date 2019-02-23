@@ -2,8 +2,8 @@ import React from 'react';
 import {configure, addDecorator} from '@storybook/react';
 import {setOptions} from '@storybook/addon-options';
 import backgrounds from '@storybook/addon-backgrounds';
-import {theme} from '../ui/theme';
-import GlobalCss from '../ui/side-effects/GlobalCss';
+import {theme} from '../src/theme';
+import GlobalCss from '../src/side-effects/GlobalCss';
 
 setOptions({
   sortStoriesByKind: false,
