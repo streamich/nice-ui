@@ -1,0 +1,149 @@
+{
+  "name": "nice-ui",
+  "version": "0.0.0",
+  "description": "Nice UI React atoms, molecules, and organisms",
+  "main": "lib/index.js",
+  "files": [
+    "lib/"
+  ],
+  "types": "lib/index.d.ts",
+  "typings": "lib/index.d.ts",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/streamich/nice-ui.git"
+  },
+  "scripts": {
+    "clean": "rimraf lib modules && yarn storybook:clean",
+    "build": "tsc",
+    "watch": "yarn clean && tsc --watch",
+    "start": "yarn storybook",
+    "semantic": "semantic-release",
+    "precommit": "pretty-quick --staged && yarn lint",
+    "prepush": "yarn prettier:diff && yarn test",
+    "test": "jest",
+    "storybook": "start-storybook -p 6008",
+    "storybook:build": "build-storybook",
+    "storybook:clean": "rimraf storybook-static",
+    "prettier": "prettier --ignore-path .gitignore --write 'src/**/*.{ts,tsx,js,jsx,json}'",
+    "prettier:diff": "prettier --list-different 'src/**/*.{ts,tsx,js,jsx,json}'",
+    "tslint": "tslint './src/**/*.{ts,tsx}' -t verbose",
+    "lint": "yarn tslint"
+  },
+  "dependencies": {
+    "fast-af": "^0.2.0",
+    "libreact": "^2.12.2",
+    "p4-css": "^1.0.0",
+    "react-textarea-autosize": "^7.1.0-1",
+    "react-universal-interface": "^0.5.0",
+    "react-use": "^5.4.1",
+    "throttle-debounce": "^1.0.1",
+    "tiny-invariant": "^1.0.3",
+    "tslib": "^1.9.3",
+    "use-t": "^1.2.0"
+  },
+  "peerDependencies": {
+    "react": "*",
+    "react-dom": "*"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.1.2",
+    "@semantic-release/changelog": "^2.1.1",
+    "@semantic-release/git": "^6.0.1",
+    "@semantic-release/npm": "^3.4.0",
+    "@storybook/addon-actions": "^4.1.13",
+    "@storybook/addon-backgrounds": "^4.1.13",
+    "@storybook/addon-knobs": "^4.1.13",
+    "@storybook/addon-links": "^4.0.2",
+    "@storybook/addon-notes": "^4.1.13",
+    "@storybook/addon-options": "^4.1.13",
+    "@storybook/addon-viewport": "^4.1.13",
+    "@storybook/react": "^4.0.2",
+    "@types/jest": "22.0.1",
+    "@types/node": "9.3.0",
+    "@types/react": "^16.7.11",
+    "@types/react-dom": "^16.0.11",
+    "babel-loader": "^8.0.4",
+    "ci-scripts": "^0.10.0",
+    "concurrently": "^3.5.1",
+    "enzyme": "3.3.0",
+    "enzyme-adapter-react-16": "^1.1.1",
+    "enzyme-to-json": "3.3.0",
+    "fork-ts-checker-webpack-plugin": "^0.4.13",
+    "git-cz": "^1.7.0",
+    "gitbook-cli": "2.3.2",
+    "glob": "^7.1.2",
+    "husky": "^0.14.3",
+    "jest": "22.1.2",
+    "jest-environment-jsdom": "^22.1.4",
+    "jest-environment-jsdom-global": "^1.0.3",
+    "mkdirp": "0.5.1",
+    "prettier": "^1.13.5",
+    "pretty-quick": "^1.6.0",
+    "prop-types": "^15.6.2",
+    "react": "next",
+    "react-dom": "next",
+    "react-markdown": "3.1.4",
+    "react-test-renderer": "16.2.0",
+    "rimraf": "2.6.2",
+    "semantic-release": "^15.7.1",
+    "storybook-readme": "^4.0.2",
+    "to-string-loader": "1.1.5",
+    "ts-jest": "22.0.1",
+    "ts-loader": "^5.3.3",
+    "ts-node": "^7.0.1",
+    "tslint": "^5.10.0",
+    "tslint-config-common": "^1.6.0",
+    "typescript": "^3.1.6",
+    "url-loader": "^1.1.2",
+    "webpack": "^4.24.0",
+    "yalc": "^1.0.0-pre.24"
+  },
+  "config": {
+    "commitizen": {
+      "path": "git-cz",
+      "changelog": {
+        "scopes": [
+          "none",
+          "atoms",
+          "molecules",
+          "organisms",
+          "templates",
+          "pages",
+          "markdown",
+          "styles",
+          "util"
+        ]
+      }
+    }
+  },
+  "jest": {
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js",
+      "jsx"
+    ],
+    "transform": {
+      "^.+\\.tsx?$": "ts-jest"
+    },
+    "transformIgnorePatterns": [],
+    "testRegex": ".*/__tests__/.*\\.(test|spec)\\.(jsx?|tsx?)$",
+    "setupFiles": [
+      "./src/__tests__/setup.js"
+    ],
+    "testEnvironment": "jest-environment-jsdom-global",
+    "testURL": "http://localhost"
+  },
+  "release": {
+    "verifyConditions": [
+      "@semantic-release/changelog",
+      "@semantic-release/npm",
+      "@semantic-release/git"
+    ],
+    "prepare": [
+      "@semantic-release/changelog",
+      "@semantic-release/npm",
+      "@semantic-release/git"
+    ]
+  }
+}

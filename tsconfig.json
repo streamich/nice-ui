@@ -1,0 +1,23 @@
+{
+  "compilerOptions": {
+    "target": "es5",
+    "module": "commonjs",
+    "moduleResolution": "Node",
+    "downlevelIteration": true,
+    "removeComments": true,
+    "noImplicitAny": false,
+    "sourceMap": true,
+    "outDir": "./lib",
+    "allowJs": false,
+    "allowSyntheticDefaultImports": true,
+    "jsx": "react",
+    "skipDefaultLibCheck": true,
+    "skipLibCheck": true,
+    "experimentalDecorators": true,
+    "importHelpers": true,
+    "declaration": true,
+    "lib": ["dom", "es5", "es6", "es7", "es2015", "scripthost", "dom.iterable"]
+  },
+  "include": ["src"],
+  "exclude": ["node_modules", "lib", "src/**/__story__/*.*", "src/**/__tests__/*.*", "*.test.ts", "*.test.tsx"]
+}

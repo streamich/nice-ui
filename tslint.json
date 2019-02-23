@@ -1,0 +1,6 @@
+{
+  "extends": ["tslint-config-common", "tslint-config-common/react"],
+  "linterOptions": {
+    "exclude": ["coverage/", "dist/", "node_modules/"]
+  }
+}
