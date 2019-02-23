@@ -7765,6 +7765,11 @@ load-json-file@^4.0.0:
     pify "^3.0.0"
     strip-bom "^3.0.0"
 
+load-script@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/load-script/-/load-script-1.0.0.tgz#0491939e0bee5643ee494a7e3da3d2bac70c6ca4"
+  integrity sha1-BJGTngvuVkPuSUp+PaPSuscMbKQ=
+
 loader-runner@^2.3.0:
   version "2.4.0"
   resolved "https://registry.yarnpkg.com/loader-runner/-/loader-runner-2.4.0.tgz#ed47066bfe534d7e84c4c7b9998c2a75607d9357"
@@ -8199,6 +8204,11 @@ material-colors@^1.2.1:
   version "1.2.6"
   resolved "https://registry.yarnpkg.com/material-colors/-/material-colors-1.2.6.tgz#6d1958871126992ceecc72f4bcc4d8f010865f46"
   integrity sha512-6qE4B9deFBIa9YSpOc9O0Sgc43zTeVYbgDT5veRKSlB2+ZuHNoVVxA1L/ckMUayV9Ay9y7Z/SZCLcGteW9i7bg==
+
+md-mdast@^2.0.1:
+  version "2.0.1"
+  resolved "https://registry.yarnpkg.com/md-mdast/-/md-mdast-2.0.1.tgz#805d9563a883818c5f690f6f2929ce015b855892"
+  integrity sha512-ymQEZc0fZUvaxWuJ5hqUwmhPb8tJvfZoZHX/sxr0mBhO/UF51bgFUxtUT8xY8FRsh968HOVj7OGmQioApmHUBw==
 
 md5.js@^1.3.4:
   version "1.3.5"
