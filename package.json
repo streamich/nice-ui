@@ -27,7 +27,7 @@
     "storybook": "start-storybook -p 6008",
     "test": "jest",
     "tslint": "tslint './src/**/*.{ts,tsx}' -t verbose",
-    "watch": "yarn clean &` tsc --watch"
+    "watch": "yarn clean && tsc --watch"
   },
   "dependencies": {
     "fast-af": "^0.3.0",
