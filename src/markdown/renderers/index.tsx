@@ -7,6 +7,7 @@ import renderDelete from './renderDelete';
 import renderEmphasis from './renderEmphasis';
 import renderHeading from './renderHeading';
 import renderInlineCode from './renderInlineCode';
+import renderMark from './renderMark';
 import renderNode from './renderNode';
 import renderParagraph from './renderParagraph';
 import renderRoot from './renderRoot';
@@ -24,6 +25,7 @@ export const renderers: Renderers = {
   emphasis: renderEmphasis,
   heading: renderHeading,
   inlineCode: renderInlineCode,
+  mark: renderMark,
   node: renderNode,
   paragraph: renderParagraph,
   root: renderRoot,

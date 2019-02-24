@@ -12,6 +12,7 @@ export interface Renderers {
   emphasis: RenderNode;
   heading: RenderNode;
   inlineCode: RenderNode;
+  mark: RenderNode;
   node: RenderNode;
   paragraph: RenderNode;
   root: RenderNode;

@@ -9,10 +9,10 @@ storiesOf('Markdown|Markdown', module)
       src={`
 # Title
 
-## This is Subtitle
+## This is ==Subtitle==
 
 Hello this is a paragraph.${'  '}
-This should be on new line.
+This should be on new line. This is [Google](http://www.google.com).
 
 Here are \\ \# **\\\`\\\`** escaped characters.
 
