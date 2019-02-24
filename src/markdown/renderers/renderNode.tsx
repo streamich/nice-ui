@@ -1,16 +1,11 @@
 import * as React from 'react';
 import {RenderNode} from '../types';
-import renderRoot from './renderRoot';
 
-const nodeToRenderer = {
-  root: renderRoot,
-};
-
-const renderNode: RenderNode = (node, props, state) => {
-  const renderer = nodeToRenderer[node.type];
+const renderNode: RenderNode = (renderers, node, props, state) => {
+  const renderer = renderers[node.type] as RenderNode | undefined;
 
   if (renderer) {
-    return renderer(node, props, state);
+    return renderer(renderers, node, props, state);
   } else {
     return <div>unknown node</div>;
   }

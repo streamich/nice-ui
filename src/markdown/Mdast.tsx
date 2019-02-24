@@ -1,17 +1,18 @@
 import * as React from 'react';
 import {MdastProps, MdastState} from './types';
-import renderNode from './renderers/renderNode';
+import {renderers} from './renderers';
 
 class Mdast extends React.Component<MdastProps, MdastState> {
   static defaultProps = {
-    renderNode,
+    renderers,
   };
 
   state: MdastState = {};
 
   render() {
     const {props, state} = this;
-    return props.renderNode!(props.ast, props, state);
+    const {renderers} = props;
+    return renderers.renderNode(renderers, props.ast, props, state);
   }
 }
 
