@@ -33,7 +33,7 @@
     "fast-af": "^0.3.0",
     "libreact": "^2.12.2",
     "load-script": "^1.0.0",
-    "md-mdast": "^2.0.1",
+    "md-mdast": "^2.1.0",
     "p4-css": "^1.0.0",
     "react-textarea-autosize": "^7.1.0",
     "react-universal-interface": "^0.5.2",
