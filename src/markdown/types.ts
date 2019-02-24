@@ -4,13 +4,15 @@ export * from 'md-mdast/lib/types';
 
 export type MdastNode = IRoot | TBlockToken | TInlineToken;
 export interface Renderers {
-  node: RenderNode;
+  blockquote: RenderNode;
   children: RenderChildren;
-  root: RenderNode;
-  paragraph: RenderNode;
-  text: RenderNode;
   emphasis: RenderNode;
+  heading: RenderNode;
+  node: RenderNode;
+  paragraph: RenderNode;
+  root: RenderNode;
   strong: RenderNode;
+  text: RenderNode;
 }
 
 export type RenderChildren = (

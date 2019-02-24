@@ -7,6 +7,7 @@ const renderNode: RenderNode = (renderers, node, props, state) => {
   if (renderer) {
     return renderer(renderers, node, props, state);
   } else {
+    console.log('node', node);
     return <div>unknown node</div>;
   }
 };

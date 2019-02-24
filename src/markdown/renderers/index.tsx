@@ -6,13 +6,17 @@ import renderParagraph from './renderParagraph';
 import renderText from './renderText';
 import renderEmphasis from './renderEmphasis';
 import renderStrong from './renderStrong';
+import renderHeading from './renderHeading';
+import renderBlockquote from './renderBlockquote';
 
 export const renderers: Renderers = {
-  node: renderNode,
+  blockquote: renderBlockquote,
   children: renderChildren,
-  root: renderRoot,
-  paragraph: renderParagraph,
-  text: renderText,
   emphasis: renderEmphasis,
+  heading: renderHeading,
+  node: renderNode,
+  paragraph: renderParagraph,
+  root: renderRoot,
   strong: renderStrong,
+  text: renderText,
 };
