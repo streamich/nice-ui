@@ -1,4 +1,4 @@
-import loadScript from 'load-script';
+const loadScript = require('load-script');
 
 // const URL = 'https://unpkg.com/charchem@0.0.2/easychem.js';
 const URL = 'https://unpkg.com/charchem@0.0.2/charchem.js';
