@@ -8,6 +8,7 @@ export interface Renderers {
   break: RenderNode;
   children: RenderChildren;
   code: RenderNode;
+  delete: RenderNode;
   emphasis: RenderNode;
   heading: RenderNode;
   inlineCode: RenderNode;
@@ -15,6 +16,8 @@ export interface Renderers {
   paragraph: RenderNode;
   root: RenderNode;
   strong: RenderNode;
+  sup: RenderNode;
+  sub: RenderNode;
   text: RenderNode;
 }
 

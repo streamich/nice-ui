@@ -14,12 +14,19 @@ storiesOf('Markdown|Markdown', module)
 Hello this is a paragraph.${'  '}
 This should be on new line.
 
+Here are \\ \# **\\\`\\\`** escaped characters.
+
 > ... some quote ...
 
 This is \`code\`:
 
     git status
 
+This is some JavaScript^1^~2~ ~~code~~:
+
+\`\`\`js
+console.log(123);
+\`\`\`
     `}
     />
   ));
