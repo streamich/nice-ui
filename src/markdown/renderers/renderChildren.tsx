@@ -10,11 +10,11 @@ const renderChildren: RenderChildren = (renderers, children, props, state) => {
       Fragment,
       null,
       ...children.map((node) => {
-        return renderers.renderNode(renderers, node, props, state);
+        return renderers.node(renderers, node, props, state);
       }),
     );
   } else {
-    return renderers.renderNode(renderers, children, props, state);
+    return renderers.node(renderers, children, props, state);
   }
 };
 

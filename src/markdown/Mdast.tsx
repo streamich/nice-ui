@@ -12,7 +12,7 @@ class Mdast extends React.Component<MdastProps, MdastState> {
   render() {
     const {props, state} = this;
     const {renderers} = props;
-    return renderers.renderNode(renderers, props.ast, props, state);
+    return renderers.node(renderers, props.ast, props, state);
   }
 }
 

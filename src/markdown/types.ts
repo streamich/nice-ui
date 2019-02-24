@@ -4,14 +4,18 @@ export * from 'md-mdast/lib/types';
 
 export type MdastNode = IRoot | TBlockToken | TInlineToken;
 export interface Renderers {
-  renderNode: RenderNode;
-  renderChildren: RenderChildren;
-  renderRoot: RenderNode;
+  node: RenderNode;
+  children: RenderChildren;
+  root: RenderNode;
+  paragraph: RenderNode;
+  text: RenderNode;
+  emphasis: RenderNode;
+  strong: RenderNode;
 }
 
 export type RenderChildren = (
   renderers: Renderers,
-  children: MdastNode[],
+  children: MdastNode | MdastNode[],
   props: MdastProps,
   state: MdastState,
 ) => React.ReactNode;
