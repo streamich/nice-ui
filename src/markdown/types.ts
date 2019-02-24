@@ -5,9 +5,12 @@ export * from 'md-mdast/lib/types';
 export type MdastNode = IRoot | TBlockToken | TInlineToken;
 export interface Renderers {
   blockquote: RenderNode;
+  break: RenderNode;
   children: RenderChildren;
+  code: RenderNode;
   emphasis: RenderNode;
   heading: RenderNode;
+  inlineCode: RenderNode;
   node: RenderNode;
   paragraph: RenderNode;
   root: RenderNode;

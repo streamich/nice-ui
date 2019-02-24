@@ -11,7 +11,8 @@ storiesOf('Markdown|Markdown', module)
 
 ## This is Subtitle
 
-Hello this is a paragraph.
+Hello this is a paragraph.${'  '}
+This should be on new line.
 
 > ... some quote ...
 

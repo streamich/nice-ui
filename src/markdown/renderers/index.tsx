@@ -1,19 +1,25 @@
 import {Renderers} from '../types';
-import renderNode from './renderNode';
-import renderRoot from './renderRoot';
-import renderChildren from './renderChildren';
-import renderParagraph from './renderParagraph';
-import renderText from './renderText';
-import renderEmphasis from './renderEmphasis';
-import renderStrong from './renderStrong';
-import renderHeading from './renderHeading';
 import renderBlockquote from './renderBlockquote';
+import renderBreak from './renderBreak';
+import renderChildren from './renderChildren';
+import renderCode from './renderCode';
+import renderEmphasis from './renderEmphasis';
+import renderHeading from './renderHeading';
+import renderInlineCode from './renderInlineCode';
+import renderNode from './renderNode';
+import renderParagraph from './renderParagraph';
+import renderRoot from './renderRoot';
+import renderStrong from './renderStrong';
+import renderText from './renderText';
 
 export const renderers: Renderers = {
   blockquote: renderBlockquote,
+  break: renderBreak,
   children: renderChildren,
+  code: renderCode,
   emphasis: renderEmphasis,
   heading: renderHeading,
+  inlineCode: renderInlineCode,
   node: renderNode,
   paragraph: renderParagraph,
   root: renderRoot,
