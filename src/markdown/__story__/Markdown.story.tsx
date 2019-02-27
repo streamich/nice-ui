@@ -12,7 +12,7 @@ storiesOf('Markdown|Markdown', module)
 ## This is ==Subtitle==
 
 Hello this is a paragraph.${'  '}
-This should be on new line. This is [Google](http://www.google.com).
+This should be on new line. This is [Google](http://www.google.com "This is Google").
 
 Here are \\ \# **\\\`\\\`** escaped characters.
 
@@ -27,6 +27,9 @@ This is some JavaScript^1^~2~ ~~code~~:
 \`\`\`js
 console.log(123);
 \`\`\`
+
+![image](https://user-images.githubusercontent.com/9773803/53509104-6fc53000-3abb-11e9-8ad3-71882cb9f8d3.png "Image haha")
+
     `}
     />
   ));
