@@ -11,6 +11,7 @@ export interface Renderers {
   code: RenderNode;
   delete: RenderNode;
   emphasis: RenderNode;
+  footnoteReference: RenderNode;
   heading: RenderNode;
   icon: RenderNode;
   image: RenderNode;

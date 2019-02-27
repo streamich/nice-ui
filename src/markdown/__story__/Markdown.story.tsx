@@ -13,7 +13,7 @@ storiesOf('Markdown|Markdown', module)
 
 Hello :smile: this is a $$2+2$$ paragraph.${'  '}
 This ++should++ be on new line. This is [Google](http://www.google.com "This is Google").
-But this is [Bing][bing].
+But this is [Bing][bing][^1].
 
 [bing]: http://bing.com "Das ist Bing"
 

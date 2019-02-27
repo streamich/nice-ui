@@ -5,6 +5,7 @@ import renderChildren from './renderChildren';
 import renderCode from './renderCode';
 import renderDelete from './renderDelete';
 import renderEmphasis from './renderEmphasis';
+import renderFootnoteReference from './renderFootnoteReference';
 import renderHeading from './renderHeading';
 import renderIcon from './renderIcon';
 import renderImage from './renderImage';
@@ -29,6 +30,7 @@ export const renderers: Renderers = {
   code: renderCode,
   delete: renderDelete,
   emphasis: renderEmphasis,
+  footnoteReference: renderFootnoteReference,
   heading: renderHeading,
   icon: renderIcon,
   image: renderImage,
