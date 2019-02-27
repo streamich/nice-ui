@@ -3,9 +3,16 @@ import {RenderNode} from '../types';
 
 const renderLink: RenderNode = (renderers, flat, idx, props, state) => {
   const node = flat.nodes[idx] as any;
+  let {url, title} = node;
+
+  if (node.type === 'linkReference') {
+    const definition = flat.nodes[flat.definitions[node.identifier]] as any;
+    url = definition.url;
+    title = definition.title;
+  }
 
   return (
-    <a href={node.url} title={node.title}>
+    <a href={url} title={title}>
       {renderers.children(renderers, flat, idx, props, state)}
     </a>
   );

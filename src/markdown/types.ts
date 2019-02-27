@@ -13,10 +13,12 @@ export interface Renderers {
   emphasis: RenderNode;
   heading: RenderNode;
   image: RenderNode;
+  imageReference: RenderNode;
   inlineCode: RenderNode;
   mark: RenderNode;
   node: RenderNode;
   link: RenderNode;
+  linkReference: RenderNode;
   paragraph: RenderNode;
   root: RenderNode;
   strong: RenderNode;
