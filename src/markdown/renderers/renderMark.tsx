@@ -1,8 +1,8 @@
 import * as React from 'react';
-import {RenderNode, IMark} from '../types';
+import {RenderNode} from '../types';
 
-const renderMark: RenderNode = (renderers, node: IMark, props, state) => (
-  <mark>{renderers.children(renderers, node.children, props, state)}</mark>
+const renderMark: RenderNode = (renderers, flat, idx, props, state) => (
+  <mark>{renderers.children(renderers, flat, idx, props, state)}</mark>
 );
 
 export default renderMark;

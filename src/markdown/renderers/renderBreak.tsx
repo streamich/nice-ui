@@ -1,8 +1,6 @@
 import * as React from 'react';
-import {RenderNode, IBreak} from '../types';
+import {RenderNode} from '../types';
 
-const renderBreak: RenderNode = (renderers, node: IBreak, props, state) => {
-  return <br />;
-};
+const renderBreak: RenderNode = () => <br />;
 
 export default renderBreak;

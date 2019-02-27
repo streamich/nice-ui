@@ -1,8 +1,8 @@
 import * as React from 'react';
-import {RenderNode, ISub} from '../types';
+import {RenderNode} from '../types';
 
-const renderSub: RenderNode = (renderers, node: ISub, props, state) => (
-  <sub>{renderers.children(renderers, node.children, props, state)}</sub>
+const renderSub: RenderNode = (renderers, flat, idx, props, state) => (
+  <sub>{renderers.children(renderers, flat, idx, props, state)}</sub>
 );
 
 export default renderSub;

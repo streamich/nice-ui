@@ -1,8 +1,8 @@
 import * as React from 'react';
-import {RenderNode, IBlockquote} from '../types';
+import {RenderNode} from '../types';
 
-const renderBlockquote: RenderNode = (renderers, node: IBlockquote, props, state) => {
-  return <blockquote>{renderers.children(renderers, node.children, props, state)}</blockquote>;
+const renderBlockquote: RenderNode = (renderers, flat, idx, props, state) => {
+  return <blockquote>{renderers.children(renderers, flat, idx, props, state)}</blockquote>;
 };
 
 export default renderBlockquote;

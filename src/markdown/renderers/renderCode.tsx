@@ -1,8 +1,8 @@
 import * as React from 'react';
-import {RenderNode, ICode} from '../types';
+import {RenderNode} from '../types';
 
-const renderCode: RenderNode = (renderers, node: ICode, props, state) => {
-  return <pre>{node.value}</pre>;
+const renderCode: RenderNode = (renderers, flat, idx) => {
+  return <pre>{flat.nodes[idx].value}</pre>;
 };
 
 export default renderCode;

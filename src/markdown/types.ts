@@ -1,4 +1,5 @@
 import {IRoot, TBlockToken, TInlineToken} from 'md-mdast/lib/types';
+import {Flat} from 'mdast-flat/lib/types';
 
 export * from 'md-mdast/lib/types';
 
@@ -6,7 +7,7 @@ export type MdastNode = IRoot | TBlockToken | TInlineToken;
 export interface Renderers {
   blockquote: RenderNode;
   break: RenderNode;
-  children: RenderChildren;
+  children: RenderNode;
   code: RenderNode;
   delete: RenderNode;
   emphasis: RenderNode;
@@ -22,21 +23,16 @@ export interface Renderers {
   text: RenderNode;
 }
 
-export type RenderChildren = (
-  renderers: Renderers,
-  children: MdastNode | MdastNode[],
-  props: MdastProps,
-  state: MdastState,
-) => React.ReactNode;
 export type RenderNode = (
   renderers: Renderers,
-  node: MdastNode,
+  flat: Flat,
+  idx: number, // Node ID.
   props: MdastProps,
   state: MdastState,
 ) => React.ReactNode;
 
 export interface MdastProps {
-  ast: IRoot;
+  ast: Flat;
   renderers?: Renderers;
 }
 

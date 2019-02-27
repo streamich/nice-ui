@@ -1,21 +1,20 @@
 import * as React from 'react';
-import {RenderChildren} from '../types';
+import {RenderNode} from '../types';
 
 const {createElement, Fragment} = React;
 
-const renderChildren: RenderChildren = (renderers, children, props, state) => {
-  if (!children) return null;
-  else if (children instanceof Array) {
+const renderChildren: RenderNode = (renderers, flat, idx, props, state) => {
+  const node = flat.nodes[idx];
+  if (!node || !node.children) return null;
+  else if (node.children instanceof Array) {
     return createElement(
       Fragment,
       null,
-      ...children.map((node) => {
-        return renderers.node(renderers, node, props, state);
+      ...node.children.map((index) => {
+        return renderers.node(renderers, flat, index, props, state);
       }),
     );
-  } else {
-    return renderers.node(renderers, children, props, state);
-  }
+  } else return null; // Should never happen.
 };
 
 export default renderChildren;

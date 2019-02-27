@@ -1,3 +1,11 @@
-import {create} from 'md-mdast/lib';
+import {create} from 'md-mdast';
+import {mdastToFlat} from 'mdast-flat';
 
-export const parser = create();
+const parser = create();
+
+export const toMDASTF = (markdown: string) => {
+  const mdast = parser.tokenizeBlock(markdown);
+  const flat = mdastToFlat(mdast);
+
+  return flat;
+};

@@ -1,20 +1,26 @@
 import * as React from 'react';
-import {parser} from './parser';
-import Mdast from './Mdast';
+import {Flat} from 'mdast-flat/lib/types';
+import MdastFlat from './MdastFlat';
+import {toMDASTF} from './parser';
 
 export interface Props {
   src: string;
+  toMDASTF: (markdown: string) => Flat;
 }
 
 export interface State {}
 
 class Markdown extends React.Component<Props, State> {
+  static defaultProps = {
+    toMDASTF,
+  };
+
   state: State = {};
 
   render() {
-    const mdast = parser.tokenizeBlock(this.props.src);
+    const mdast = toMDASTF(this.props.src);
 
-    return <Mdast ast={mdast} />;
+    return <MdastFlat ast={mdast} />;
   }
 }
 
