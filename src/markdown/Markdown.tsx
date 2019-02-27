@@ -5,12 +5,14 @@ import {toMDASTF} from './parser';
 
 export interface Props {
   src: string;
-  toMDASTF: (markdown: string) => Flat;
+  toMDASTF?: (markdown: string) => Flat;
 }
 
-export interface State {}
+export interface State {
+  flat?: Flat;
+}
 
-class Markdown extends React.Component<Props, State> {
+class Markdown extends React.PureComponent<Props, State> {
   static defaultProps = {
     toMDASTF,
   };

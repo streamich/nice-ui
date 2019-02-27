@@ -12,9 +12,11 @@ export interface Renderers {
   delete: RenderNode;
   emphasis: RenderNode;
   heading: RenderNode;
+  icon: RenderNode;
   image: RenderNode;
   imageReference: RenderNode;
   inlineCode: RenderNode;
+  inlineMath: RenderNode;
   mark: RenderNode;
   node: RenderNode;
   link: RenderNode;
@@ -25,6 +27,7 @@ export interface Renderers {
   sup: RenderNode;
   sub: RenderNode;
   text: RenderNode;
+  thematicBreak: RenderNode;
 }
 
 export type RenderNode = (

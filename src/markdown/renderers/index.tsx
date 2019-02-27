@@ -6,8 +6,10 @@ import renderCode from './renderCode';
 import renderDelete from './renderDelete';
 import renderEmphasis from './renderEmphasis';
 import renderHeading from './renderHeading';
+import renderIcon from './renderIcon';
 import renderImage from './renderImage';
 import renderInlineCode from './renderInlineCode';
+import renderInlineMath from './renderInlineMath';
 import renderMark from './renderMark';
 import renderNode from './renderNode';
 import renderLink from './renderLink';
@@ -17,6 +19,7 @@ import renderStrong from './renderStrong';
 import renderSub from './renderSub';
 import renderSup from './renderSup';
 import renderText from './renderText';
+import renderThematicBreak from './renderThematicBreak';
 
 export const renderers: Renderers = {
   blockquote: renderBlockquote,
@@ -26,9 +29,11 @@ export const renderers: Renderers = {
   delete: renderDelete,
   emphasis: renderEmphasis,
   heading: renderHeading,
+  icon: renderIcon,
   image: renderImage,
   imageReference: renderImage,
   inlineCode: renderInlineCode,
+  inlineMath: renderInlineMath,
   mark: renderMark,
   node: renderNode,
   link: renderLink,
@@ -39,4 +44,5 @@ export const renderers: Renderers = {
   sub: renderSub,
   sup: renderSup,
   text: renderText,
+  thematicBreak: renderThematicBreak,
 };

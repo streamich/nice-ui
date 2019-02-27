@@ -11,11 +11,13 @@ storiesOf('Markdown|Markdown', module)
 
 ## This is ==Subtitle==
 
-Hello this is a paragraph.${'  '}
+Hello :smile: this is a $$2+2$$ paragraph.${'  '}
 This should be on new line. This is [Google](http://www.google.com "This is Google").
 But this is [Bing][bing].
 
 [bing]: http://bing.com "Das ist Bing"
+
+----------------
 
 Here are \\ \# **\\\`\\\`** escaped characters.
 
@@ -33,11 +35,18 @@ console.log(123);
 
 ![image](https://user-images.githubusercontent.com/9773803/53509104-6fc53000-3abb-11e9-8ad3-71882cb9f8d3.png "Image haha")
 
+\`\`\`
+cd
+\`\`\`
+
 Image reference:
 
 ![image][img]
 
 [img]: https://user-images.githubusercontent.com/9773803/53509104-6fc53000-3abb-11e9-8ad3-71882cb9f8d3.png "Image haha"
+
+https://github.com/streamich
+
 
     `}
     />
