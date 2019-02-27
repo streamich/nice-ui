@@ -28,6 +28,7 @@ export interface Renderers {
   sub: RenderNode;
   text: RenderNode;
   thematicBreak: RenderNode;
+  underline: RenderNode;
 }
 
 export type RenderNode = (

@@ -20,6 +20,7 @@ import renderSub from './renderSub';
 import renderSup from './renderSup';
 import renderText from './renderText';
 import renderThematicBreak from './renderThematicBreak';
+import renderUnderline from './renderUnderline';
 
 export const renderers: Renderers = {
   blockquote: renderBlockquote,
@@ -45,4 +46,5 @@ export const renderers: Renderers = {
   sup: renderSup,
   text: renderText,
   thematicBreak: renderThematicBreak,
+  underline: renderUnderline,
 };
