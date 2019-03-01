@@ -5,8 +5,9 @@ import Markdown from '../Markdown';
 storiesOf('Markdown|Markdown', module)
   .add('Italic and bold', () => <Markdown src="*alpha* __bravo__" />)
   .add('Blocks', () => (
-    <Markdown
-      src={`
+    <div style={{maxWidth: 700, margin: '0 auto'}}>
+      <Markdown
+        src={`
 # Title
 
 ## This is ==Subtitle==
@@ -51,7 +52,8 @@ https://github.com/streamich
 
 
     `}
-    />
+      />
+    </div>
   ))
   .add('Footnotes', () => (
     <Markdown

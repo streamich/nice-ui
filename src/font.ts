@@ -1,5 +1,12 @@
 import {isClient} from './util';
 
+// light small font
+// -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen,Ubuntu,Cantarell,"Open Sans","Helvetica Neue",sans-serif
+// Small light font on Twitter:
+// "Gotham Narrow SSm", "Helvetica Neue", Helvetica, sans-serifs
+// Sound cloud fonts
+// "InterstateSound Tnum", "Interstate", "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Garuda, Verdana, Tahoma, sans-serif;
+
 const ff =
   'Ubuntu,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen,Cantarell,"Open Sans","Helvetica Neue",sans-serif';
 
