@@ -8226,10 +8226,10 @@ mdast-add-list-metadata@1.0.1:
   dependencies:
     unist-util-visit-parents "1.1.2"
 
-mdast-flat@^1.1.0:
-  version "1.1.0"
-  resolved "https://registry.yarnpkg.com/mdast-flat/-/mdast-flat-1.1.0.tgz#8d44e26edc1203159e56694280049d427dd72806"
-  integrity sha512-iPZWSPSE9ShrN3SkZgwjxa6R1zXK6IlCRRiZQ3O91lpE7IKdtUIgQdFUjpPcTnUsdfNmjE6EKu0FuaAuSpUyiw==
+mdast-flat@^1.4.0:
+  version "1.4.0"
+  resolved "https://registry.yarnpkg.com/mdast-flat/-/mdast-flat-1.4.0.tgz#c5221e993f02cb6e5d4bc1789529a7dc1308d17a"
+  integrity sha512-HL+lBsWdOL9PjjJEB5ZDJFlyZzrqloBJuiO2P+KVqmihrjPAa+ppD6hvQ/vqr5Y7Tz9gnTUZ/JCmWgMsZxbHrQ==
   dependencies:
     md-mdast "^3.0.0"
 
