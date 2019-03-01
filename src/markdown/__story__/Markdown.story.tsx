@@ -15,6 +15,8 @@ Hello :smile: this is a $$2+2$$ paragraph.${'  '}
 This ++should++ be on new line. This is [Google](http://www.google.com "This is Google").
 But this is [Bing][bing][^1].
 
+[^1]: First footnote...
+
 [bing]: http://bing.com "Das ist Bing"
 
 ----------------
@@ -49,5 +51,17 @@ https://github.com/streamich
 
 
     `}
+    />
+  ))
+  .add('Footnotes', () => (
+    <Markdown
+      src={`
+Sandwiches are the most healthy food[^healty-food]. It has been documented by NASA.[^NASA]
+Burger[^1] is a type of sandwich.
+
+[^1]: Burger footnote.
+[^healty-food]: Yes, very healthy.
+[^NASA]: Even Marsians eat sandwiches.
+`}
     />
   ));

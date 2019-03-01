@@ -12,7 +12,13 @@ class MdastFlat extends React.Component<MdastProps, MdastState> {
   render() {
     const {props, state} = this;
     const {renderers} = props;
-    return renderers.node(renderers, props.ast, 0, props, state);
+
+    return (
+      <>
+        {renderers.node(renderers, props.ast, 0, props, state)}
+        {renderers.footnotes(renderers, props.ast, 0, props, state)}
+      </>
+    );
   }
 }
 
