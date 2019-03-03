@@ -28,6 +28,7 @@ export const css = () => {
       fz: 1.4 ** inv + 'em',
       letterSpacing: h - 5 + 'px',
       col: `rgba(0,0,0,${1 - h / 15})`,
+      mar: `${h * 0.1 + 0.3}em 0`,
     };
   }
 
@@ -58,6 +59,12 @@ export const css = () => {
     hyphens: 'auto',
     hr,
     p,
+    'h1:first-child,h2:first-child,h3:first-child,h4:first-child,h5:first-child,h6:first-child': {
+      mart: 0,
+    },
+    'h1:last-child,h2:last-child,h3:last-child,h4:last-child,h5:last-child,h6:last-child': {
+      marb: 0,
+    },
     'h1,h2,h3,h4,h5,h6': {
       ...theme.font.serif,
       col: 'rgba(0, 0, 0, 0.9)',
