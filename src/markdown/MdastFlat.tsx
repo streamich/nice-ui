@@ -2,7 +2,7 @@ import * as React from 'react';
 import {MdastProps, MdastState} from './types';
 import {renderers} from './renderers';
 import {rule} from 'p4-css';
-import {css} from './css';
+import {css} from './css/v1';
 
 const className = rule(css());
 
