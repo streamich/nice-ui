@@ -20,7 +20,7 @@
     "prepush": "yarn prettier:diff && yarn test",
     "prettier:diff": "prettier --list-different 'src/**/*.{ts,tsx,js,jsx,json}'",
     "prettier": "prettier --ignore-path .gitignore --write 'src/**/*.{ts,tsx,js,jsx,json}'",
-    "semantic": "semantic-release",
+    "release": "semantic-release",
     "start": "yarn storybook",
     "storybook:build": "build-storybook",
     "storybook:clean": "rimraf storybook-static",
