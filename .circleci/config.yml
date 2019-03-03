@@ -108,7 +108,7 @@ jobs:
           command: npx gh-pages -d storybook-static
       - run:
           name: Release
-          command: npx release
+          command: yarn release
 
   nightly:
     <<: *container
