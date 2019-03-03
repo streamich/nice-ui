@@ -1,6 +1,6 @@
 {
   "name": "nice-ui",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "Nice UI React atoms, molecules, and organisms",
   "main": "lib/index.js",
   "files": [
