@@ -43,7 +43,7 @@ refs:
     - &Build_Storybook
       run:
         name: Build Storybook
-        command: yarn storybook:bulid
+        command: yarn storybook:build
     - &Test
       run:
         name: Test
