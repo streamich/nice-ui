@@ -12,6 +12,17 @@ refs:
         command: |
           node -v && npm -v && yarn -v
           printenv
+    - &Restore_Cache
+      restore_cache:
+        name: Restore Cache
+        keys:
+          - yarn-packages-{{ checksum "yarn.lock" }}
+    - &Save_Cache
+      save_cache:
+        name: Save Cache
+        key: yarn-packages-{{ checksum "yarn.lock" }}
+        paths:
+          - ~/.cache/yarn
     - &Install
       run:
         name: Install Dependencies
@@ -29,6 +40,10 @@ refs:
       run:
         name: Build
         command: yarn build
+    - &Build_Storybook
+      run:
+        name: Build Storybook
+        command: yarn storybook:bulid
     - &Test
       run:
         name: Test
@@ -48,9 +63,12 @@ jobs:
     steps:
       - checkout
       - *Versions
+      - *Restore_Cache
       - *Install
+      - *Save_Cache
       - *Setup_Environment
       - *Build
+      - *Build_Storybook
       - *Test
       - store_artifacts:
           path: ~/repo/storybook-static
@@ -62,9 +80,12 @@ jobs:
     steps:
       - checkout
       - *Versions
+      - *Restore_Cache
       - *Install
+      - *Save_Cache
       - *Setup_Environment
       - *Build
+      - *Build_Storybook
       - *Test
       - store_artifacts:
           path: ~/repo/storybook-static
@@ -92,6 +113,7 @@ jobs:
       - *Install
       - *Setup_Environment
       - *Build
+      - *Build_Storybook
       - *Test
 
 workflows:
