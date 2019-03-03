@@ -45,6 +45,7 @@ export type RenderNode = (
 export interface MdastProps {
   ast: Flat;
   renderers?: Renderers;
+  isCompact?: boolean;
 }
 
 export interface MdastState {}
