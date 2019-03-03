@@ -1,3 +1,10 @@
+# [1.3.0](https://github.com/streamich/nice-ui/compare/v1.2.0...v1.3.0) (2019-03-03)
+
+
+### Features
+
+* **markdown:** 🎸 add isCompact heading styling ([433b096](https://github.com/streamich/nice-ui/commit/433b096))
+
 # [1.2.0](https://github.com/streamich/nice-ui/compare/v1.1.1...v1.2.0) (2019-03-03)
 
 
