@@ -1,3 +1,10 @@
+## [1.1.1](https://github.com/streamich/nice-ui/compare/v1.1.0...v1.1.1) (2019-03-03)
+
+
+### Bug Fixes
+
+* use [@latest](https://github.com/latest) version for CDN ([58c9415](https://github.com/streamich/nice-ui/commit/58c9415))
+
 # [1.1.0](https://github.com/streamich/nice-ui/compare/v1.0.0...v1.1.0) (2019-03-03)
 
 
