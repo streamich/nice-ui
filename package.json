@@ -4,7 +4,8 @@
   "description": "Nice UI React atoms, molecules, and organisms",
   "main": "lib/index.js",
   "files": [
-    "lib/"
+    "lib/",
+    "public/"
   ],
   "types": "lib/index.d.ts",
   "typings": "lib/index.d.ts",
