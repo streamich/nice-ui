@@ -24,6 +24,7 @@ refs:
         command: |
           echo 'export BUILD_VERSION=$(cross-ci printenv BUILD_VERSION)' >> $BASH_ENV
           echo 'export PROJECT_NAME=$(cross-ci printenv PROJECT_NAME)' >> $BASH_ENV
+          echo 'export GH_STATUS_TOKEN=$(cross-ci printenv GITHUB_TOKEN)' >> $BASH_ENV
     - &Build
       run:
         name: Build
