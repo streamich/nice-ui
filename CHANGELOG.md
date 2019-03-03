@@ -1,3 +1,15 @@
+# [1.1.0](https://github.com/streamich/nice-ui/compare/v1.0.0...v1.1.0) (2019-03-03)
+
+
+### Bug Fixes
+
+* 🐛 upload /public dir to NPM ([b5311af](https://github.com/streamich/nice-ui/commit/b5311af))
+
+
+### Features
+
+* **markdown:** 🎸 improve CSS styling ([66029e7](https://github.com/streamich/nice-ui/commit/66029e7))
+
 # 1.0.0 (2019-03-03)
 
 
