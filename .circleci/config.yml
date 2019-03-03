@@ -5,118 +5,129 @@ refs:
     docker:
       - image: chybie/node-aws-cli
     working_directory: ~/repo
-  gh-status: &gh-status
-    name: Post status to GitHub
-    command: |
-      npx cross-ci :run \
-          npx commit-status success Storybook "'\${BUILD_VERSION}'" "'https://d2myv4xsj7kapm.cloudfront.net/builds/\${PROJECT_NAME}/\${BUILD_VERSION}/storybook/index.html'"
+  steps:
+    - &Versions
+      run:
+        name: Versions
+        command: |
+          node -v && npm -v && yarn -v
+          printenv
+    - &Restore_Cache
+      restore_cache:
+        name: Restore Cache
+        keys:
+          - yarn-packages-{{ checksum "yarn.lock" }}
+    - &Save_Cache
+      save_cache:
+        name: Save Cache
+        key: yarn-packages-{{ checksum "yarn.lock" }}
+        paths:
+          - ~/.cache/yarn
+    - &Install
+      run:
+        name: Install Dependencies
+        command: yarn install --frozen-lockfile
+    - &Install_Global_Dependencies
+      run:
+        name: Install Global Dependencies
+        command: npm i -g cross-ci commit-status ci-scripts
+    - &Setup_Environment
+      run:
+        name: Setup Environment
+        command: |
+          echo 'export BUILD_VERSION=$(cross-ci printenv BUILD_VERSION)' >> $BASH_ENV
+          echo 'export BUILD_NUM=$(cross-ci printenv BUILD_NUM)' >> $BASH_ENV
+          echo 'export PROJECT_NAME=$(cross-ci printenv PROJECT_NAME)' >> $BASH_ENV
+          echo 'export GH_STATUS_TOKEN=$(cross-ci printenv GITHUB_TOKEN)' >> $BASH_ENV
+    - &Build
+      run:
+        name: Build
+        command: yarn build
+    - &Build_Storybook
+      run:
+        name: Build Storybook
+        command: yarn storybook:build
+    - &Test
+      run:
+        name: Test
+        command: yarn test
+    - &Post_to_GitHub_Storybook_Artifacts_Link
+      run:
+        name: Post to GitHub Storybook Artifacts Link
+        command: npx commit-status success "Storybook" $BUILD_VERSION "https://$BUILD_NUM-172218257-gh.circle-artifacts.com/0/root/repo/storybook-static/index.html"
+    - &Post_to_Slack
+      run:
+        name: Post to Slack
+        command: npx ci-scripts slack
 
 jobs:
   all:
     <<: *container
     steps:
       - checkout
-      - restore_cache:
-          keys:
-            - v1-dependencies-{{ checksum "package.json" }}
-            - v1-dependencies-
-      - run:
-          name: Versions
-          command: node -v && npm -v && yarn -v
-      - run:
-          name: Install dependencies
-          command: yarn install
-      - save_cache:
-          paths:
-            - node_modules
-          key: v1-dependencies-{{ checksum "package.json" }}
-      - run:
-          name: Build
-          command: yarn ci:build
-      - run:
-          name: Test
-          command: yarn test
-      - run:
-          name: Upload to S3
-          command: yarn ci:upload-all
-      - run:
-          <<: *gh-status
-      - run:
-          name: Post to Slack
-          command: yarn ci:slack
+      - *Versions
+      - *Restore_Cache
+      - *Install
+      - *Save_Cache
+      - *Install_Global_Dependencies
+      - *Setup_Environment
+      - *Build
+      - *Build_Storybook
+      - *Test
       - store_artifacts:
           path: ~/repo/storybook-static
+      - *Post_to_GitHub_Storybook_Artifacts_Link
+      - *Post_to_Slack
 
   master:
     <<: *container
     steps:
       - checkout
-      - restore_cache:
-          keys:
-            - v1-dependencies-{{ checksum "package.json" }}
-            - v1-dependencies-
-      - run:
-          name: Versions
-          command: node -v && npm -v && yarn -v
-      - run:
-          name: Install dependencies
-          command: yarn install
-      - save_cache:
-          paths:
-            - node_modules
-          key: v1-dependencies-{{ checksum "package.json" }}
-      - run:
-          name: Build
-          command: yarn ci:build
-      - run:
-          name: Test
-          command: yarn test
-      - run:
-          name: Upload to S3
-          command: yarn ci:upload-master
-      - run:
-          <<: *gh-status
-      - run:
-          name: Post to Slack
-          command: yarn ci:slack
-      - run:
-          name: Release
-          command: npx semantic-release
+      - *Versions
+      - *Restore_Cache
+      - *Install
+      - *Save_Cache
+      - *Install_Global_Dependencies
+      - *Setup_Environment
+      - *Build
+      - *Build_Storybook
+      - *Test
       - store_artifacts:
           path: ~/repo/storybook-static
+      - *Post_to_GitHub_Storybook_Artifacts_Link
+      - *Post_to_Slack
+      - run:
+          name: Setup GitHub
+          command: |
+            git config --global user.email "streamich@gmail.com"
+            git config --global user.name "streamich"
+            git remote rm origin
+            git remote add origin https://${GITHUB_TOKEN}@github.com/streamich/nice-ui
+      - run:
+          name: Upload Storybook
+          command: npx gh-pages -d storybook-static
+      - run:
+          name: Release
+          command: npx release
 
   nightly:
     <<: *container
     steps:
       - checkout
-      - run:
-          name: Versions
-          command: node -v && npm -v && yarn -v
-      - run:
-          name: NPM Auth
-          command: echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" > ~/.npmrc
-      - run:
-          name: Install dependencies
-          command: yarn install
-      - run:
-          name: Build
-          command: yarn ci:build
-      - run:
-          name: Test
-          command: yarn test
-      - run:
-          name: Post to Slack on SUCCESS
-          command: npx ci slack --channel="dev-null"
-      - run:
-          name: Post to Slack on FAILURE
-          command: npx ci slack --channel="dev" --text="@here `nice-ui` nightly build failed :scream:" --icon_emoji=tired_face
-          when: on_fail
+      - *Versions
+      - *Install
+      - *Install_Global_Dependencies
+      - *Setup_Environment
+      - *Build
+      - *Build_Storybook
+      - *Test
 
 workflows:
   version: 2
   all:
     jobs:
       - all:
+          context: common-env-vars
           filters:
             branches:
               ignore:
@@ -125,12 +136,14 @@ workflows:
   master:
     jobs:
       - master:
+          context: common-env-vars
           filters:
             branches:
               only: master
   nightly:
     jobs:
-      - nightly
+      - nightly:
+          context: common-env-vars
     triggers:
       - schedule:
           cron: '0 1 * * *'
