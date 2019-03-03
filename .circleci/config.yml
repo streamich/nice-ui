@@ -26,9 +26,11 @@ refs:
     - &Install
       run:
         name: Install Dependencies
-        command: |
-          yarn install --pure-lockfile
-          npm i -g cross-ci commit-status ci-scripts
+        command: yarn install --frozen-lockfile
+    - &Install_Global_Dependencies
+      run:
+        name: Install Global Dependencies
+        command: npm i -g cross-ci commit-status ci-scripts
     - &Setup_Environment
       run:
         name: Setup Environment
@@ -66,6 +68,7 @@ jobs:
       - *Restore_Cache
       - *Install
       - *Save_Cache
+      - *Install_Global_Dependencies
       - *Setup_Environment
       - *Build
       - *Build_Storybook
@@ -83,6 +86,7 @@ jobs:
       - *Restore_Cache
       - *Install
       - *Save_Cache
+      - *Install_Global_Dependencies
       - *Setup_Environment
       - *Build
       - *Build_Storybook
@@ -111,6 +115,7 @@ jobs:
       - checkout
       - *Versions
       - *Install
+      - *Install_Global_Dependencies
       - *Setup_Environment
       - *Build
       - *Build_Storybook
