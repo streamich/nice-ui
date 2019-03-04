@@ -1,3 +1,11 @@
+# [1.4.0](https://github.com/streamich/nice-ui/compare/v1.3.0...v1.4.0) (2019-03-04)
+
+
+### Features
+
+* **markdown:** 🎸 add inline katex equations ([d8706d0](https://github.com/streamich/nice-ui/commit/d8706d0))
+* **markdown:** 🎸 add Markdown block ([2a43cbc](https://github.com/streamich/nice-ui/commit/2a43cbc))
+
 # [1.3.0](https://github.com/streamich/nice-ui/compare/v1.2.0...v1.3.0) (2019-03-03)
 
 
