@@ -1,14 +1,9 @@
 import * as React from 'react';
 import {BlockMath} from 'react-katex';
 import {IMarkdownBlockCodeProps, blockDefaultProps} from '../shared';
+import loadKatexCss from '../../util/loadKatexCss';
 
-// Load KaTeX CSS bundle.
-const link = document.createElement('link');
-link.rel = 'stylesheet';
-link.type = 'text/css';
-link.href = 'https://unpkg.com/katex@latest/dist/katex.min.css';
-link.media = 'all';
-document.getElementsByTagName('head')[0].appendChild(link);
+loadKatexCss();
 
 const Katex: React.SFC<IMarkdownBlockCodeProps> = (props) => <BlockMath math={props.source} />;
 
