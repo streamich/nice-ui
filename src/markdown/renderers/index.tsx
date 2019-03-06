@@ -16,6 +16,8 @@ import renderInlineMath from './renderInlineMath';
 import renderMark from './renderMark';
 import renderNode from './renderNode';
 import renderLink from './renderLink';
+import renderList from './renderList';
+import renderListItem from './renderListItem';
 import renderParagraph from './renderParagraph';
 import renderRoot from './renderRoot';
 import renderStrong from './renderStrong';
@@ -45,6 +47,8 @@ export const renderers: Renderers = {
   node: renderNode,
   link: renderLink,
   linkReference: renderLink,
+  list: renderList,
+  listItem: renderListItem,
   paragraph: renderParagraph,
   root: renderRoot,
   strong: renderStrong,

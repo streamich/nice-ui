@@ -1,8 +1,14 @@
 import * as React from 'react';
 import {storiesOf} from '@storybook/react';
 import Markdown from '../Markdown';
+import {withKnobs, text} from '@storybook/addon-knobs';
 
 storiesOf('Markdown|Markdown', module)
+  .addDecorator(withKnobs)
+  .add('Free text', () => {
+    const src = text('src', 'hello');
+    return <Markdown src={src} />;
+  })
   .add('Italic and bold', () => <Markdown src="*alpha* __bravo__" />)
   .add('Blocks', () => (
     <div style={{maxWidth: 700, margin: '0 auto'}}>
