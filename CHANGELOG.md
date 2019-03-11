@@ -1,3 +1,20 @@
+# [1.5.0](https://github.com/streamich/nice-ui/compare/v1.4.0...v1.5.0) (2019-03-11)
+
+
+### Bug Fixes
+
+* 🐛 upgrade md-mdast dep ([6339c1d](https://github.com/streamich/nice-ui/commit/6339c1d))
+
+
+### Features
+
+* **atoms:** 🎸 add atoms ([9ef2399](https://github.com/streamich/nice-ui/commit/9ef2399))
+* **markdown:** 🎸 add initial list rendering ([7cbf26d](https://github.com/streamich/nice-ui/commit/7cbf26d))
+* **markdown:** 🎸 support ordered lists ([2248bb1](https://github.com/streamich/nice-ui/commit/2248bb1))
+* **molecules:** 🎸 add molecules ([0f15e67](https://github.com/streamich/nice-ui/commit/0f15e67))
+* **organisms:** 🎸 add organisms ([7efb35a](https://github.com/streamich/nice-ui/commit/7efb35a))
+* 🎸 add pages and templates ([13fcf6a](https://github.com/streamich/nice-ui/commit/13fcf6a))
+
 # [1.4.0](https://github.com/streamich/nice-ui/compare/v1.3.0...v1.4.0) (2019-03-04)
 
 
