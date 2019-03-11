@@ -24,6 +24,8 @@ export interface Renderers {
   node: RenderNode;
   link: RenderNode;
   linkReference: RenderNode;
+  list: RenderNode;
+  listItem: RenderNode;
   paragraph: RenderNode;
   root: RenderNode;
   strong: RenderNode;

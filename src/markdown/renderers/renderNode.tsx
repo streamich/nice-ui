@@ -8,6 +8,8 @@ const renderNode: RenderNode = (renderers, flat, idx, props, state) => {
   if (renderer) {
     return renderer(renderers, flat, idx, props, state);
   } else {
+    // tslint:disable-next-line
+    console.log('no renderer for node:', node.type);
     return <span data-node={node.type}>{node.value || '😃'}</span>;
   }
 };

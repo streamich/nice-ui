@@ -8187,10 +8187,15 @@ material-colors@^1.2.1:
   resolved "https://registry.yarnpkg.com/material-colors/-/material-colors-1.2.6.tgz#6d1958871126992ceecc72f4bcc4d8f010865f46"
   integrity sha512-6qE4B9deFBIa9YSpOc9O0Sgc43zTeVYbgDT5veRKSlB2+ZuHNoVVxA1L/ckMUayV9Ay9y7Z/SZCLcGteW9i7bg==
 
-md-mdast@^3.0.0, md-mdast@^3.1.0:
+md-mdast@^3.0.0:
   version "3.1.0"
   resolved "https://registry.yarnpkg.com/md-mdast/-/md-mdast-3.1.0.tgz#809e304f396bdd56a01ba4c3cee84b912e74c2c1"
   integrity sha512-IoVQtTfS7zFzZH7CdggpkvjjE1oPzm4RD/u3lXXSSNsC8rxGPdicuj/Q0JIu1RpUgu5XLgGlTaBUccQmyeVEaA==
+
+md-mdast@^3.1.1:
+  version "3.1.1"
+  resolved "https://registry.yarnpkg.com/md-mdast/-/md-mdast-3.1.1.tgz#876510ed0e90101226642eae1d8e47f1e09f7d24"
+  integrity sha512-VS4JFrSEt/iNruCfl2Vd9poAZAFWOfeBB8ZMYYIHT9S1VUo1Bl1YQiibWLOfzVT2Xm9ql8LLAS21KU4CeHy9ig==
 
 md5.js@^1.3.4:
   version "1.3.5"

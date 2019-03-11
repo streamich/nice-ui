@@ -34,7 +34,7 @@
     "fast-af": "^0.3.0",
     "libreact": "^2.12.2",
     "load-script": "^1.0.0",
-    "md-mdast": "^3.1.0",
+    "md-mdast": "^3.1.1",
     "mdast-flat": "^1.4.0",
     "p4-css": "^1.1.0",
     "react-katex": "^2.0.2",
