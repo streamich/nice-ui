@@ -97,15 +97,11 @@ jobs:
       - *Post_to_GitHub_Storybook_Artifacts_Link
       - *Post_to_Slack
       - run:
-          name: Setup GitHub
-          command: |
-            git config --global user.email "streamich@gmail.com"
-            git config --global user.name "streamich"
-            git remote rm origin
-            git remote add origin https://${GITHUB_TOKEN}@github.com/streamich/nice-ui
-      - run:
           name: Upload Storybook
-          command: npx gh-pages -d storybook-static
+          command: aws s3 sync ./storybook-static s3://p4-all/builds/nice-ui/master/storybook --acl public-read
+      - run:
+          name: Post to GitHub Storybook master
+          command: npx commit-status success "Storybook" "latest" "https://d2myv4xsj7kapm.cloudfront.net/builds/nice-ui/master/storybook/index.html"
       - run:
           name: Release
           command: yarn release
