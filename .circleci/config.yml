@@ -98,10 +98,10 @@ jobs:
       - *Post_to_Slack
       - run:
           name: Upload Storybook
-          command: aws s3 sync ./storybook-static s3://p4-all/builds/nice-ui/master/storybook --acl public-read
+          command: aws s3 sync ./storybook-static s3://infrastructure.production.ci.onp4.com/builds/nice-ui/master/storybook --acl public-read
       - run:
           name: Post to GitHub Storybook master
-          command: npx commit-status success "Storybook" "latest" "https://d2myv4xsj7kapm.cloudfront.net/builds/nice-ui/master/storybook/index.html"
+          command: npx commit-status success "Storybook" "latest" "https://infrastructure.production.ci.onp4.com.s3.amazonaws.com/builds/nice-ui/master/storybook/index.html"
       - run:
           name: Release
           command: yarn release
