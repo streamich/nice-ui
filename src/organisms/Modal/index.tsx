@@ -48,7 +48,7 @@ const classNameTitle = rule({
 
 const classNameClose = rule({
   pos: 'absolute',
-  z: 2,
+  z: 3,
   top: theme.space[2] + 'px',
   right: theme.space[2] + 'px',
 });
