@@ -13,6 +13,7 @@ const mdInlineElements = `
 - $$2+2$$ --- math
 - Superscript^text^
 - Subscript~text~
+- :smile: --- emoji
 `;
 
 const mdInlineCombinations = `
