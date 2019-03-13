@@ -3,17 +3,52 @@ import {storiesOf} from '@storybook/react';
 import Markdown from '../Markdown';
 import {withKnobs, text} from '@storybook/addon-knobs';
 
-storiesOf('Markdown|Markdown', module)
-  .addDecorator(withKnobs)
-  .add('Free text', () => {
-    const src = text('src', 'hello');
-    return <Markdown src={src} />;
-  })
-  .add('Italic and bold', () => <Markdown src="*alpha* __bravo__" />)
-  .add('Blocks', () => (
-    <div style={{maxWidth: 700, margin: '0 auto'}}>
-      <Markdown
-        src={`
+const mdInlineElements = `
+- *alpha* --- italic
+- __bravo__ --- bold
+- ~~hello~~ --- strikethrough
+- ==important== --- highlighted
+- \`console.log(123)\` --- code
+- \`\`js console.log(123)\`\` --- custom language code
+- $$2+2$$ --- math
+- Superscript^text^
+- Subscript~text~
+`;
+
+const mdInlineCombinations = `
+- *hello __world__* --- bold inside italic
+- __hello *world*__ --- italic inside bold
+- ==hello __world__== --- bold inside highlighted
+- ==hello _world_== --- italic inside highlighted
+- ==hello _wo**rld**_== --- bold inside italic inside highlighted
+`;
+
+const mdChecklist = `
+- [ ] Todo
+- [x] Done
+`;
+
+const mdTitleWithText = `
+# Hello
+
+This is text.
+`;
+
+const mdTitleScale = `
+# Title 1
+
+## Title 2
+
+### Title 3
+
+#### Title 4
+
+##### Title 5
+
+###### Title 6
+`;
+
+const mdMostElements = `
 # Title
 
 ## This is ==Subtitle==
@@ -55,38 +90,40 @@ Image reference:
 [img]: https://user-images.githubusercontent.com/9773803/53509104-6fc53000-3abb-11e9-8ad3-71882cb9f8d3.png "Image haha"
 
 https://github.com/streamich
+`;
 
-
-    `}
-      />
-    </div>
-  ))
-  .add('Footnotes', () => (
-    <Markdown
-      src={`
+const mdFootnotes = `
 Sandwiches are the most healthy food[^healty-food]. It has been documented by NASA.[^NASA]
 Burger[^1] is a type of sandwich.
 
 [^1]: Burger footnote.
 [^healty-food]: Yes, very healthy.
 [^NASA]: Even Marsians eat sandwiches.
-`}
-    />
-  ))
-  .add('Title scale', () => (
-    <Markdown
-      src={`
-# Title 1
+`;
 
-## Title 2
+const sources = [
+  ['Inline elements', mdInlineElements],
+  ['Inline combinations', mdInlineCombinations],
+  ['Checklist', mdChecklist],
+  ['Title with text', mdTitleWithText],
+  ['Title scale', mdTitleScale],
+  ['Most elements', mdMostElements],
+  ['Footnotes', mdFootnotes],
+];
 
-### Title 3
+const fontSizes = ['19.8px', '16px'];
 
-#### Title 4
+let stories = storiesOf('Markdown|Markdown', module).addDecorator(withKnobs);
 
-##### Title 5
-
-###### Title 6
-`}
-    />
-  ));
+for (const fontSize of fontSizes) {
+  for (const [name, source] of sources) {
+    stories = stories.add(`${fontSize}: ${name}`, () => {
+      const src = text('src', source);
+      return (
+        <div style={{fontSize, maxWidth: '700px', margin: '50px auto'}}>
+          <Markdown src={src} />
+        </div>
+      );
+    });
+  }
+}

@@ -17,15 +17,23 @@ export const css = () => {
   const p = {
     ...theme.font.sans,
     lh: 1.7,
-    fz: '1.24em',
+    fz: '1em',
     col: 'rgba(0, 0, 0, 0.8)',
+  };
+
+  const mark = {
+    bdrad: '.25em',
+    bg: '#ff0',
+    // bg: '#ff6',
+    pad: '0 .125em',
+    mar: '0 -.125em',
   };
 
   const headingScale = {};
   for (let h = 1; h <= 6; h++) {
     const inv = 6 - h;
     headingScale['h' + h] = {
-      fz: 1.4 ** inv + 'em',
+      fz: 1.35 ** inv + 'em',
       letterSpacing: h - 5 + 'px',
       col: `rgba(0,0,0,${1 - h / 15})`,
       mar: `${h * 0.1 + 0.3}em 0`,
@@ -59,6 +67,7 @@ export const css = () => {
     hyphens: 'auto',
     hr,
     p,
+    mark,
     'h1:first-child,h2:first-child,h3:first-child,h4:first-child,h5:first-child,h6:first-child': {
       mart: 0,
     },
