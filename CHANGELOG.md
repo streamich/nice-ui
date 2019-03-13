@@ -1,3 +1,17 @@
+# [1.6.0](https://github.com/streamich/nice-ui/compare/v1.5.0...v1.6.0) (2019-03-13)
+
+
+### Features
+
+* **markdown:** 🎸 add emoji renderer to <Markdown> ([f71d787](https://github.com/streamich/nice-ui/commit/f71d787))
+* **markdown:** 🎸 add inline emoji renderer ([b271915](https://github.com/streamich/nice-ui/commit/b271915))
+* **markdown:** 🎸 add inline renderer ([4cca269](https://github.com/streamich/nice-ui/commit/4cca269))
+* **markdown:** 🎸 add styling for inlineCode nodes ([48ca45c](https://github.com/streamich/nice-ui/commit/48ca45c))
+* **markdown:** 🎸 improve CSS, especially for <mark> ([0225a83](https://github.com/streamich/nice-ui/commit/0225a83))
+* **markdown:** 🎸 improve rendering and error handling ([b7ff90b](https://github.com/streamich/nice-ui/commit/b7ff90b))
+* **markdown:** 🎸 parse inline code language ([2c66b59](https://github.com/streamich/nice-ui/commit/2c66b59))
+* **markdown:** 🎸 render inline math with Katex ([11efd59](https://github.com/streamich/nice-ui/commit/11efd59))
+
 # [1.5.0](https://github.com/streamich/nice-ui/compare/v1.4.0...v1.5.0) (2019-03-11)
 
 
