@@ -7,8 +7,10 @@ const renderLink: RenderNode = (renderers, flat, idx, props, state) => {
 
   if (node.type === 'linkReference') {
     const definition = flat.nodes[flat.definitions[node.identifier]] as any;
-    url = definition.url;
-    title = definition.title;
+    if (definition) {
+      url = definition.url;
+      title = definition.title;
+    }
   }
 
   return (

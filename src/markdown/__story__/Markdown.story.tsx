@@ -23,6 +23,30 @@ const mdInlineCombinations = `
 - ==hello _wo**rld**_== --- bold inside italic inside highlighted
 `;
 
+const mdInlineLinks = `
+Inline [link](http://google.com).
+
+Reference [link][google] to [google][]---and shorthand---[google].
+
+[google]: http://google.com
+`;
+
+const mdImage = `
+Simple standalone image:
+
+![](https://user-images.githubusercontent.com/9773803/53509104-6fc53000-3abb-11e9-8ad3-71882cb9f8d3.png)
+
+Image with \`alt\` text:
+
+![alt text](https://user-images.githubusercontent.com/9773803/53509104-6fc53000-3abb-11e9-8ad3-71882cb9f8d3.png)
+
+Image with \`title\` text:
+
+![](https://user-images.githubusercontent.com/9773803/53509104-6fc53000-3abb-11e9-8ad3-71882cb9f8d3.png "this is title")
+
+Inline ![](https://user-images.githubusercontent.com/9773803/53509104-6fc53000-3abb-11e9-8ad3-71882cb9f8d3.png) image
+`;
+
 const mdChecklist = `
 - [ ] Todo
 - [x] Done
@@ -104,6 +128,8 @@ Burger[^1] is a type of sandwich.
 const sources = [
   ['Inline elements', mdInlineElements],
   ['Inline combinations', mdInlineCombinations],
+  ['Inline links', mdInlineLinks],
+  ['Images', mdImage],
   ['Checklist', mdChecklist],
   ['Title with text', mdTitleWithText],
   ['Title scale', mdTitleScale],
@@ -115,10 +141,16 @@ const fontSizes = ['19.8px', '16px'];
 
 let stories = storiesOf('Markdown|Markdown', module).addDecorator(withKnobs);
 
+function decodeHtml(html) {
+  const txt = document.createElement('textarea');
+  txt.innerHTML = html;
+  return txt.value;
+}
+
 for (const fontSize of fontSizes) {
   for (const [name, source] of sources) {
     stories = stories.add(`${fontSize}: ${name}`, () => {
-      const src = text('src', source);
+      const src = decodeHtml(text('src', source));
       return (
         <div style={{fontSize, maxWidth: '700px', margin: '50px auto'}}>
           <Markdown src={src} />

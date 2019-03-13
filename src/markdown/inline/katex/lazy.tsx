@@ -7,7 +7,7 @@ export interface KatexInlineLazyProps extends IKatexInlineProps {
   fallback?: React.ReactNode;
 }
 
-const KatexInlineLazy: React.SFC<KatexInlineLazyProps> = ({fallback, ...rest}) => {
+const KatexInlineLazy: React.SFC<KatexInlineLazyProps> = ({fallback = null, ...rest}) => {
   return (
     <React.Suspense fallback={fallback}>
       <KatexInline {...rest} />

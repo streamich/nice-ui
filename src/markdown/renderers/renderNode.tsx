@@ -6,7 +6,13 @@ const renderNode: RenderNode = (renderers, flat, idx, props, state) => {
   const renderer = renderers[node.type] as RenderNode | undefined;
 
   if (renderer) {
-    return renderer(renderers, flat, idx, props, state);
+    try {
+      return renderer(renderers, flat, idx, props, state);
+    } catch (error) {
+      // tslint:disable-next-line
+      console.error(error);
+      return <span data-node="error">{node.value || '😟'}</span>;
+    }
   } else {
     // tslint:disable-next-line
     console.log('no renderer for node:', node.type);

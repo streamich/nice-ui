@@ -7,8 +7,10 @@ const renderImage: RenderNode = (renderers, flat, idx) => {
 
   if (node.type === 'imageReference') {
     const definition = flat.nodes[flat.definitions[node.identifier]] as any;
-    url = definition.url;
-    title = definition.title;
+    if (definition) {
+      url = definition.url;
+      title = definition.title;
+    }
   }
 
   return <img src={url} title={title} alt={node.alt || title} />;
