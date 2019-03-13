@@ -20,6 +20,7 @@ export interface Renderers {
   imageReference: RenderNode;
   inlineCode: RenderNode;
   inlineMath: RenderNode;
+  inlineLink: RenderNode;
   mark: RenderNode;
   node: RenderNode;
   link: RenderNode;

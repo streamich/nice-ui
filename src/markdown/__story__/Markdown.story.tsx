@@ -1,7 +1,7 @@
 import * as React from 'react';
 import {storiesOf} from '@storybook/react';
 import Markdown from '../Markdown';
-import {withKnobs, text} from '@storybook/addon-knobs';
+import {withKnobs, text, number} from '@storybook/addon-knobs';
 
 const mdInlineElements = `
 - *alpha* --- italic
@@ -24,12 +24,16 @@ const mdInlineCombinations = `
 - ==hello _wo**rld**_== --- bold inside italic inside highlighted
 `;
 
-const mdInlineLinks = `
+const mdLinks = `
 Inline [link](http://google.com).
 
 Reference [link][google] to [google][]---and shorthand---[google].
 
 [google]: http://google.com
+`;
+
+const mdInlineLink = `
+Text with https://www.youtube.com/watch?v=AGp4KFLuQNc&feature=youtu.be&t=359 a link.
 `;
 
 const mdImage = `
@@ -129,7 +133,8 @@ Burger[^1] is a type of sandwich.
 const sources = [
   ['Inline elements', mdInlineElements],
   ['Inline combinations', mdInlineCombinations],
-  ['Inline links', mdInlineLinks],
+  ['Links', mdLinks],
+  ['Inline link', mdInlineLink],
   ['Images', mdImage],
   ['Checklist', mdChecklist],
   ['Title with text', mdTitleWithText],
@@ -148,15 +153,14 @@ function decodeHtml(html) {
   return txt.value;
 }
 
-for (const fontSize of fontSizes) {
-  for (const [name, source] of sources) {
-    stories = stories.add(`${fontSize}: ${name}`, () => {
-      const src = decodeHtml(text('src', source));
-      return (
-        <div style={{fontSize, maxWidth: '700px', margin: '50px auto'}}>
-          <Markdown src={src} />
-        </div>
-      );
-    });
-  }
+for (const [name, source] of sources) {
+  stories = stories.add(`${name}`, () => {
+    const fontSize = number('Font size (px)', 19.8);
+    const src = decodeHtml(text('src', source));
+    return (
+      <div style={{fontSize: fontSize + 'px', maxWidth: '700px', margin: '50px auto'}}>
+        <Markdown src={src} />
+      </div>
+    );
+  });
 }
