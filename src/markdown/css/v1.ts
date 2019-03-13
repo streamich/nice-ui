@@ -81,9 +81,22 @@ export const css = () => {
     },
     ...headingScale,
     pre,
+
     '.md-inlineCode': {
-      color: 'red',
+      fz: '0.96em',
+      pad: '2px 3px',
+      mar: '-2px -1px',
+      bdrad: '2px',
+      bd: '1px solid rgba(0,0,0,0.05)',
+      col: '#00978e',
+      letterSpacing: '-0.025em',
+      '&:hover': {
+        bd: '1px solid transparent',
+        bg: 'rgba(0,0,0,0.04)',
+        col: '#000',
+      },
     },
+
     blockquote,
   };
 };

@@ -15,13 +15,13 @@ const renderInlineCode: RenderNode = (renderers, flat, idx) => {
     }
   }
 
-  let className = 'md-inlineCode';
+  const className = 'md-inlineCode';
 
-  if (lang) {
-    className += ' md-inlineCode-lang-' + lang;
-  }
-
-  return <code className={className}>{value}</code>;
+  return (
+    <code className={className} data-lang={lang}>
+      {value}
+    </code>
+  );
 };
 
 export default renderInlineCode;
