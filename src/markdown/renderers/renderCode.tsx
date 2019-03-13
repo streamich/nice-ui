@@ -4,6 +4,7 @@ import {ICode} from 'md-mdast/lib/types';
 
 const renderCode: RenderNode = (renderers, flat, idx) => {
   const node = flat.nodes[idx] as ICode;
+
   return (
     <pre
       className={

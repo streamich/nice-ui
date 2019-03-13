@@ -1,7 +1,7 @@
 import * as React from 'react';
 import {storiesOf} from '@storybook/react';
 import {withKnobs, text} from '@storybook/addon-knobs';
-import Katex from '..';
+import Katex from '../lazy';
 
 storiesOf('Markdown|Inline/Katex', module)
   .addDecorator(withKnobs)

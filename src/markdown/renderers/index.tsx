@@ -13,6 +13,7 @@ import renderIcon from './renderIcon';
 import renderImage from './renderImage';
 import renderInlineCode from './renderInlineCode';
 import renderInlineMath from './renderInlineMath';
+import renderInlineLink from './renderInlineLink';
 import renderMark from './renderMark';
 import renderNode from './renderNode';
 import renderLink from './renderLink';
@@ -43,6 +44,7 @@ export const renderers: Renderers = {
   imageReference: renderImage,
   inlineCode: renderInlineCode,
   inlineMath: renderInlineMath,
+  inlineLink: renderInlineLink,
   mark: renderMark,
   node: renderNode,
   link: renderLink,

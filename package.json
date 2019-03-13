@@ -31,6 +31,7 @@
     "watch": "yarn clean && tsc --watch"
   },
   "dependencies": {
+    "emoji-js": "^3.4.1",
     "fast-af": "^0.3.0",
     "libreact": "^2.12.2",
     "load-script": "^1.0.0",
