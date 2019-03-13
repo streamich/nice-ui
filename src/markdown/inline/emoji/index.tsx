@@ -6,16 +6,17 @@ emoji.replace_mode = 'unified';
 
 export interface EmojiInlineProps {
   source: string;
-  renderVoid?: (source: string) => React.ReactElement | null;
+  renderVoid?: (text: string) => React.ReactElement | null;
 }
 
 const renderVoidDefault = (source) => <span>{source}</span>;
 
 const EmojiInline: React.SFC<EmojiInlineProps> = React.memo(({source, renderVoid = renderVoidDefault}) => {
-  const icon = emoji.replace_colons(source);
+  const text = ':' + source + ':';
+  const icon = emoji.replace_colons(text);
 
   if (icon === source) {
-    return renderVoid(source) || null;
+    return renderVoid(text) || null;
   }
 
   return <span>{icon}</span>;

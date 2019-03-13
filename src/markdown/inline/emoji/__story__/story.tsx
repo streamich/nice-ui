@@ -6,7 +6,7 @@ import EmojiInline from '..';
 storiesOf('Markdown|Inline/Emoji', module)
   .addDecorator(withKnobs)
   .add(':smile:', () => {
-    const source = text('source', ':smile:');
+    const source = text('source', 'smile');
 
     return (
       <p>
