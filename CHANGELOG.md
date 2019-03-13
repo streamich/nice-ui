@@ -1,3 +1,11 @@
+## [1.6.1](https://github.com/streamich/nice-ui/compare/v1.6.0...v1.6.1) (2019-03-13)
+
+
+### Bug Fixes
+
+* **organisms:** 🐛 make <Modal> close button clickable ([c673cbb](https://github.com/streamich/nice-ui/commit/c673cbb))
+* 🐛 use p4-css as peerDependency, app can install 1 versio ([2645026](https://github.com/streamich/nice-ui/commit/2645026))
+
 # [1.6.0](https://github.com/streamich/nice-ui/compare/v1.5.0...v1.6.0) (2019-03-13)
 
 
