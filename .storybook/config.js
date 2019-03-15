@@ -1,7 +1,6 @@
 import React from 'react';
-import {configure, addDecorator} from '@storybook/react';
+import {configure, addDecorator, addParameters} from '@storybook/react';
 import {setOptions} from '@storybook/addon-options';
-import backgrounds from '@storybook/addon-backgrounds';
 import {theme} from '../src/theme';
 import GlobalCss from '../src/side-effects/GlobalCss';
 
@@ -16,14 +15,14 @@ setOptions({
   sidebarAnimations: false,
 });
 
-addDecorator(
-  backgrounds([
+addParameters({
+  backgrounds: [
     {name: 'White', value: '#fff', default: true},
     {name: 'Snow', value: theme.snow[0], default: true},
     {name: 'Steel', value: theme.steel},
     {name: 'Black', value: theme.black},
-  ]),
-);
+  ],
+});
 
 addDecorator((story) => (
   <>
@@ -33,7 +32,6 @@ addDecorator((story) => (
 ));
 
 const req = require.context('../src/', true, /.*(stories|story)\.(js|jsx|ts|tsx)?$/);
-
 const loadStories = () => {
   const nonMd = [];
   const md = [];
@@ -49,5 +47,4 @@ const loadStories = () => {
   nonMd.forEach((filename) => req(filename));
   md.forEach((filename) => req(filename));
 };
-
 configure(loadStories, module);
