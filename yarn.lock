@@ -2363,6 +2363,11 @@ archy@~1.0.0:
   resolved "https://registry.yarnpkg.com/archy/-/archy-1.0.0.tgz#f9c8c13757cc1dd7bc379ac77b2c62a5c2868c40"
   integrity sha1-+cjBN1fMHde8N5rHeyxipcKGjEA=
 
+are-passive-events-supported@^1.1.0:
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/are-passive-events-supported/-/are-passive-events-supported-1.1.0.tgz#c806af550915c1302d881bb87db7f7722689fed7"
+  integrity sha512-psaDNYTXTQ3m6vLCu/XI81bIj+tA6J63+GieZ9leOUr4ykNyny4CLC6sS1u89JkrtuU48ddrlrQaD0NKJilF0g==
+
 are-we-there-yet@~1.1.2:
   version "1.1.5"
   resolved "https://registry.yarnpkg.com/are-we-there-yet/-/are-we-there-yet-1.1.5.tgz#4b35c2944f062a8bfcda66410760350fe9ddfc21"
@@ -6686,6 +6691,13 @@ hyphenate-style-name@^1.0.2:
   version "1.0.3"
   resolved "https://registry.yarnpkg.com/hyphenate-style-name/-/hyphenate-style-name-1.0.3.tgz#097bb7fa0b8f1a9cf0bd5c734cf95899981a9b48"
   integrity sha512-EcuixamT82oplpoJ2XU4pDtKGWQ7b00CD9f1ug9IaQ3p1bkHMiKCZ9ut9QDI6qsa6cpUuB+A/I+zLtdNK4n2DQ==
+
+iconista@^2.3.0:
+  version "2.3.0"
+  resolved "https://registry.yarnpkg.com/iconista/-/iconista-2.3.0.tgz#b717d164598f96fabab2a05054476a01bb37d467"
+  integrity sha512-Mz97CIfg0kWPtaia1YKAr2fd/XW9i5f6sp8XNVhQ8bdMZ0GzpqD5qRSXj+Oi9T+Zdi6DKC1Q7r8bYcYxrb0aWA==
+  dependencies:
+    react-use "^5.7.1"
 
 iconv-lite@0.4.23:
   version "0.4.23"
@@ -11435,6 +11447,21 @@ react-use@^5.5.0:
     use-callbag "^0.1.2"
     use-onclickoutside "^0.1.0"
 
+react-use@^5.7.1:
+  version "5.7.1"
+  resolved "https://registry.yarnpkg.com/react-use/-/react-use-5.7.1.tgz#2684f6a2229fb90c73c8791a7b75b3a76179eb8b"
+  integrity sha512-fg3/O9FCasDKiwe9fDHOXBgj8DlaGif1AvBQs3SZvuEeMNNKPuHZ2Op2OlSf771mLqmGlvQLDC2lwfCpqbu2CQ==
+  dependencies:
+    "@types/react" "^16.8.2"
+    keyboardjs "^2.5.1"
+    nano-css "^3.4.0"
+    react-wait "^0.3.0"
+    rebound "^0.1.0"
+    throttle-debounce "^2.0.1"
+    ts-easing "^0.2.0"
+    use-callbag "^0.2.0"
+    use-onclickoutside "^0.3.0"
+
 react-wait@^0.3.0:
   version "0.3.0"
   resolved "https://registry.yarnpkg.com/react-wait/-/react-wait-0.3.0.tgz#0cdd4d919012451a5bc3ab0a16d00c6fd9a8c10b"
@@ -13585,6 +13612,11 @@ ts-easing@^0.1.0:
   resolved "https://registry.yarnpkg.com/ts-easing/-/ts-easing-0.1.1.tgz#055c68ba878ddb78d7b22ce4852557b8b8366bcd"
   integrity sha512-0ak4XidpHPzrGFShdgKWY70EyShH/jKUARsJD7GjmQDmHVWxnuIzhN+B2aCqB/0lp/QGSbuk1rOXxQasRc5yiA==
 
+ts-easing@^0.2.0:
+  version "0.2.0"
+  resolved "https://registry.yarnpkg.com/ts-easing/-/ts-easing-0.2.0.tgz#c8a8a35025105566588d87dbda05dd7fbfa5a4ec"
+  integrity sha512-Z86EW+fFFh/IFB1fqQ3/+7Zpf9t2ebOAxNI/V6Wo7r5gqiqtxmgTlQ1qbqQcjLKYeSHPTsEmvlJUDg/EuL0uHQ==
+
 ts-jest@^24.0.0:
   version "24.0.0"
   resolved "https://registry.yarnpkg.com/ts-jest/-/ts-jest-24.0.0.tgz#3f26bf2ec1fa584863a5a9c29bd8717d549efbf6"
@@ -14012,10 +14044,24 @@ use-callbag@^0.1.2:
   dependencies:
     callbag-subscribe "^1.4.1"
 
+use-callbag@^0.2.0:
+  version "0.2.0"
+  resolved "https://registry.yarnpkg.com/use-callbag/-/use-callbag-0.2.0.tgz#bf3bbef918effc5818e0149f44d8b7385a7d03f1"
+  integrity sha512-ml1cDc2ZwieqXv+AtgPZUl6UWmYN/4roZgBg+LgFrU1s8khdTVEaj44utQwughw5qJDxEZ1lIOrdWEJvbO6cMA==
+  dependencies:
+    callbag-subscribe "^1.4.1"
+
 use-onclickoutside@^0.1.0:
   version "0.1.1"
   resolved "https://registry.yarnpkg.com/use-onclickoutside/-/use-onclickoutside-0.1.1.tgz#14327d6062639541374cb48db02cac3ebe7836ac"
   integrity sha512-IcQzKjG9OAlMQBGmUZ/3pU6DUuynPb6KlZaGNOFdmJ0FaV1yhJLauvvPcTerWAuH84K/cbkOLyAgncY+oTLtcg==
+
+use-onclickoutside@^0.3.0:
+  version "0.3.0"
+  resolved "https://registry.yarnpkg.com/use-onclickoutside/-/use-onclickoutside-0.3.0.tgz#a7c6bb68c8643c9a3437e34840d0cb2b96ae32b1"
+  integrity sha512-q3d3Ara3ditePmhdSiKPZ1l5+O001opo4pHH05Zwd3iqvk78UaqM+RCY/lgyQ4Irb96XjVLVnNQx6hUNcGZsbw==
+  dependencies:
+    are-passive-events-supported "^1.1.0"
 
 use-t@^1.4.0:
   version "1.4.0"
