@@ -20,6 +20,7 @@ const Demo = () => {
     ...(state.over
       ? {
           border: '1px solid green',
+          outline: '3px solid yellow',
           background: '#f8f8f8',
         }
       : {}),
@@ -34,7 +35,12 @@ const Demo = () => {
       <br />
       <br />
 
-      <pre>{JSON.stringify(state, null, 4)}</pre>
+      <div style={{maxWidth: 300, margin: '0 auto'}}>
+        <p>
+          See logs in <code>Actions</code> tab. Below is state returned by the hook:
+        </p>
+        <pre>{JSON.stringify(state, null, 4)}</pre>
+      </div>
     </div>
   );
 };

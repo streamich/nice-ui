@@ -3,7 +3,7 @@ import useRefMounted from 'react-use/lib/useRefMounted';
 import useSetState from 'react-use/lib/useSetState';
 import useEvent from '../useEvent';
 
-const {useMemo, useCallback} = React;
+const {useState, useMemo, useCallback, useEffect} = React;
 
 export interface DropAreaState {
   over: boolean;
@@ -56,33 +56,56 @@ const createProcess = (options: DropAreaOptions, mounted: React.RefObject<boolea
 const useDropArea = (options: DropAreaOptions = {}): DropAreaState => {
   const {onFiles, onText, onUri} = options;
   const mounted = useRefMounted();
-  const [state, setStateRaw] = useSetState<DropAreaState>((() => defaultState) as any);
-  // TODO: need to memoize it inside useSetState.
-  const setState = useCallback(setStateRaw, []);
+  const [over, setOverRaw] = useState<boolean>(false);
+  const setOver = useCallback(setOverRaw, []);
   const process = useMemo(() => createProcess(options, mounted), [onFiles, onText, onUri]);
-  useEvent('dragover', (event) => {
-    event.preventDefault();
-    setState({over: true});
-  });
-  useEvent('dragenter', (event) => {
-    event.preventDefault();
-    setState({over: true});
-  });
-  useEvent('dragleave', (event) => {
-    setState({over: false});
-  });
-  useEvent('dragexit', (event) => {
-    setState({over: false});
-  });
-  useEvent('drop', (event) => {
-    event.preventDefault();
-    setState({over: false});
-    process(event.dataTransfer, event);
-  });
-  useEvent('paste', (event) => {
-    process(event.clipboardData, event);
-  });
-  return state;
+
+  useEffect(() => {
+    const onDragOver = (event) => {
+      event.preventDefault();
+    };
+
+    const onDragEnter = (event) => {
+      event.preventDefault();
+      setOver(true);
+    };
+
+    const onDragLeave = () => {
+      setOver(true);
+    };
+
+    const onDragExit = () => {
+      setOver(false);
+    };
+
+    const onDrop = (event) => {
+      event.preventDefault();
+      setOver(false);
+      process(event.dataTransfer, event);
+    };
+
+    const onPaste = (event) => {
+      process(event.clipboardData, event);
+    };
+
+    window.addEventListener('dragover', onDragOver);
+    window.addEventListener('dragenter', onDragEnter);
+    window.addEventListener('dragleave', onDragLeave);
+    window.addEventListener('dragexit', onDragExit);
+    window.addEventListener('drop', onDrop);
+    window.addEventListener('paste', onPaste);
+
+    return () => {
+      window.removeEventListener('dragover', onDragOver);
+      window.removeEventListener('dragenter', onDragEnter);
+      window.removeEventListener('dragleave', onDragLeave);
+      window.removeEventListener('dragexit', onDragExit);
+      window.removeEventListener('drop', onDrop);
+      window.removeEventListener('paste', onPaste);
+    };
+  }, [process]);
+
+  return {over};
 };
 
 export default useDropArea;
