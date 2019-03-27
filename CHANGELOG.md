@@ -1,3 +1,10 @@
+# [1.7.0](https://github.com/streamich/nice-ui/compare/v1.6.1...v1.7.0) (2019-03-27)
+
+
+### Features
+
+* **atoms:** 🎸 add <Iconista> component ([1bf8239](https://github.com/streamich/nice-ui/commit/1bf8239))
+
 ## [1.6.1](https://github.com/streamich/nice-ui/compare/v1.6.0...v1.6.1) (2019-03-13)
 
 
