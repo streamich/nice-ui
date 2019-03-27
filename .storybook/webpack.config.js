@@ -1,7 +1,7 @@
 const webpack = require('webpack');
-const path = require('path');
 const {compilerOptions} = require('../tsconfig.json');
 const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin');
+const path = require('path');
 
 const SRC_PATH = path.join(__dirname, '../src');
 const APP_ASSETS = process.env.APP_ASSETS_ORIGIN;
@@ -38,24 +38,11 @@ module.exports = {
           },
         },
       },
-      {
-        test: /\.(png|jpg|gif)$/,
-        use: [
-          {
-            loader: 'url-loader',
-            options: {
-              limit: 8192,
-            },
-          },
-        ],
-      },
     ],
   },
-
   resolve: {
-    extensions: ['.ts', '.tsx', '.js', '.jsx', '.gif', '.jpg', '.png'],
+    extensions: ['.ts', '.tsx', '.js', '.jsx'],
     enforceExtension: false,
   },
-
   plugins: [new ForkTsCheckerWebpackPlugin(), new webpack.DefinePlugin(globalVariables)],
 };

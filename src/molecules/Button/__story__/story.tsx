@@ -5,6 +5,7 @@ import SpinnerCircle from '../../../atoms/SpinnerCircle';
 import GoogleIcon from '../../../atoms/icons/svg/Google';
 import {theme} from '../../../theme';
 import {Button} from '..';
+import Iconista from '../../../atoms/Iconista';
 
 storiesOf('Molecules|Button', module)
   .add('Basic', () => <Button attr={{onClick: action('onClick')}}>Click me!</Button>)
@@ -157,5 +158,10 @@ storiesOf('Molecules|Button', module)
       </Button>
       <br />
       <br />
+    </div>
+  ))
+  .add('lala', () => (
+    <div>
+      <Button icon={<Iconista set="atlaskit" icon="app-switcher" />}>test</Button>
     </div>
   ));
