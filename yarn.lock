@@ -11462,13 +11462,14 @@ react-use@^5.7.1:
     use-callbag "^0.2.0"
     use-onclickoutside "^0.3.0"
 
-react-use@^6.1.0:
-  version "6.1.0"
-  resolved "https://registry.yarnpkg.com/react-use/-/react-use-6.1.0.tgz#e239c73e37ce8b00029fa00fa7c9b45ec0264e14"
-  integrity sha512-ySiaUmiStac48j38r8Tc7PtpxU+1rLMSmnB3DW1yaD2iks3s3mYFED3hZzql+0pBoSV5DB/ysEmwD3wPy4JQpw==
+react-use@^7.0.0:
+  version "7.0.0"
+  resolved "https://registry.yarnpkg.com/react-use/-/react-use-7.0.0.tgz#88e558b6d2d2a7063d8b9f2e74d93359d22c2fd1"
+  integrity sha512-xfNScM6jPNZwepVx3AWltSrbPVo7uazUtKe28Mrbw8JSYdV9O0zubsax++0FLZdL54P6JC5b/JnEl/fNZ3R4Tw==
   dependencies:
     nano-css "^5.1.0"
     react-wait "^0.3.0"
+    screenfull "^4.1.0"
     throttle-debounce "^2.0.1"
     ts-easing "^0.2.0"
 
@@ -12345,6 +12346,11 @@ screenfull@^3.3.2:
   version "3.3.3"
   resolved "https://registry.yarnpkg.com/screenfull/-/screenfull-3.3.3.tgz#8cf7e706aceac2e75131aadcb81b622acfe11d39"
   integrity sha512-DzYUuXr+OV2BDvYXaYzlYgJd4WXZZ2CW5NFC7Kw6TUCpzXJAx4MwlVD6CH+Mu6fi8rfAQIQfqdFZ4jtDsEkWig==
+
+screenfull@^4.1.0:
+  version "4.1.0"
+  resolved "https://registry.yarnpkg.com/screenfull/-/screenfull-4.1.0.tgz#30eb338f615941f5a2cdd96c14e36063d2d9d764"
+  integrity sha512-/qH0HAmc+ilbZ9Vf8J7RHjjecSdqmjIh98iMkA6uCSKcHdJK1TiXhTbR+cin8rG70xi4Peyz7wW1KJVP6sp30g==
 
 select@^1.1.2:
   version "1.1.2"
