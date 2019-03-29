@@ -12,7 +12,8 @@ export interface Props {
   renderContext?: () => React.ReactElement<any>;
 }
 
-const Comment: React.SFC<Props> = ({width, asset, onUserClick, onPostClick, renderBody, renderContext}) => {
+const noop = () => {};
+const Comment: React.SFC<Props> = ({width, asset, onUserClick, onPostClick = noop, renderBody, renderContext}) => {
   let avatar: React.ReactElement<any> = null;
 
   if (asset.creator) {
@@ -30,11 +31,6 @@ const Comment: React.SFC<Props> = ({width, asset, onUserClick, onPostClick, rend
       renderContext={renderContext}
     />
   );
-};
-
-const noop = () => {};
-Comment.defaultProps = {
-  onPostClick: noop,
 };
 
 export default Comment;
