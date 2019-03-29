@@ -4,7 +4,7 @@ import MdastFlat from './MdastFlat';
 import {toMDASTF} from './parser';
 
 export interface Props {
-  src: string;
+  src?: string | null;
   toMDASTF?: (markdown: string) => Flat;
   isCompact?: boolean;
 }
@@ -23,7 +23,7 @@ class Markdown extends React.PureComponent<Props, State> {
   render() {
     const {props} = this;
     const {isCompact, src} = props;
-    const mdast = toMDASTF(src);
+    const mdast = toMDASTF(src || '');
 
     return <MdastFlat ast={mdast} isCompact={isCompact} />;
   }
