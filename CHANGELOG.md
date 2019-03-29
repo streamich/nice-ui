@@ -1,3 +1,23 @@
+# [1.8.0](https://github.com/streamich/nice-ui/compare/v1.7.0...v1.8.0) (2019-03-29)
+
+
+### Bug Fixes
+
+* **markdown:** 🐛 support malformed markdown source text ([3cd4b9d](https://github.com/streamich/nice-ui/commit/3cd4b9d))
+* **molecules:** 🐛 add z-index to <PageFrame> ([f033366](https://github.com/streamich/nice-ui/commit/f033366))
+
+
+### Features
+
+* 🎸 add first iteration of useDrop() hook ([75762dc](https://github.com/streamich/nice-ui/commit/75762dc))
+* 🎸 add useDropArea() hook ([65cbf23](https://github.com/streamich/nice-ui/commit/65cbf23))
+* 🎸 add useEvent() hook ([bc23df3](https://github.com/streamich/nice-ui/commit/bc23df3))
+* 🎸 add usePageLeave hook ([6f22aa7](https://github.com/streamich/nice-ui/commit/6f22aa7))
+* 🎸 bump react-use ([67798d6](https://github.com/streamich/nice-ui/commit/67798d6))
+* **molecules:** 🎸 add <PageFrame> component ([1f2c742](https://github.com/streamich/nice-ui/commit/1f2c742))
+* 🎸 dont use defaultProps ([b7afdd9](https://github.com/streamich/nice-ui/commit/b7afdd9))
+* 🎸 implement useDrop hook using regular events ([00cd639](https://github.com/streamich/nice-ui/commit/00cd639))
+
 # [1.7.0](https://github.com/streamich/nice-ui/compare/v1.6.1...v1.7.0) (2019-03-27)
 
 
