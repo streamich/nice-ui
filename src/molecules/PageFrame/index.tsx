@@ -1,9 +1,11 @@
 import * as React from 'react';
 import {rule} from 'p4-css';
 import {theme} from '../../theme';
+import {frame as z} from '../../zindex';
 
 const blockClass = rule({
   pos: 'fixed',
+  z,
   top: 0,
   left: 0,
   w: '100vw',

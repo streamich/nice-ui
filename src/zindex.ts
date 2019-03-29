@@ -1,7 +1,7 @@
 export const select = 100;
 
-export const topNav = 1e3;
-export const sidebar = 1e3 + 1;
-export const context = 1e3 + 2;
-
-export const progress = 1e4;
+export const topNav = 1000;
+export const sidebar = 1001;
+export const context = 1002;
+export const progress = 2000;
+export const frame = 5000;
