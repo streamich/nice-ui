@@ -11525,10 +11525,17 @@ react-universal-interface@^0.3.1:
   resolved "https://registry.yarnpkg.com/react-universal-interface/-/react-universal-interface-0.3.2.tgz#bf80f962ce976c6aba67ab3baaf26be447c26e80"
   integrity sha512-55OUIKJQXTS+ZboaJ9gncgpthzqXe7gzE0lsZtt2tGE3YUD0o/nn6bfkc0mquzt8Sh0+Dd8vBqmSGNXvl2tlUA==
 
-react-universal-interface@^0.5.0, react-universal-interface@^0.5.2:
+react-universal-interface@^0.5.0:
   version "0.5.2"
   resolved "https://registry.yarnpkg.com/react-universal-interface/-/react-universal-interface-0.5.2.tgz#1a8220785777224428dddfaaf078f1b0f6aa7019"
   integrity sha512-OCw2WJAQDpxnRCB8EqugKGbll06Vb6oMoqrkYSk/AP2m+cCUTpz1k5jPj/opDfhoBXY6qQyt5ZbxW7wohvIziw==
+  dependencies:
+    tslib "^1.9.3"
+
+react-universal-interface@^0.6.0:
+  version "0.6.0"
+  resolved "https://registry.yarnpkg.com/react-universal-interface/-/react-universal-interface-0.6.0.tgz#b65cbf7d71a2f3f7dd9705d8e4f06748539bd465"
+  integrity sha512-PzApKKWfd7gvDi1sU/D07jUqnLvFxYqvJi+GEtLvBO5tXJjKr2Sa8ETVHkMA7Jcvdwt7ttbPq7Sed1JpFdNqBQ==
   dependencies:
     tslib "^1.9.3"
 
