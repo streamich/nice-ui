@@ -40,7 +40,7 @@
     "mdast-flat": "^1.4.0",
     "react-katex": "^2.0.2",
     "react-textarea-autosize": "^7.1.0",
-    "react-universal-interface": "^0.5.2",
+    "react-universal-interface": "^0.6.0",
     "react-use": "^7.0.0",
     "throttle-debounce": "^2.1.0",
     "tiny-invariant": "^1.0.3",
