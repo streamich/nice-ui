@@ -1,3 +1,10 @@
+## [1.8.1](https://github.com/streamich/nice-ui/compare/v1.8.0...v1.8.1) (2019-05-02)
+
+
+### Bug Fixes
+
+* **deps:** update dependency react-universal-interface to ^0.6.0 ([e37e4d0](https://github.com/streamich/nice-ui/commit/e37e4d0))
+
 # [1.8.0](https://github.com/streamich/nice-ui/compare/v1.7.0...v1.8.0) (2019-03-29)
 
 
