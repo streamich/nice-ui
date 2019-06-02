@@ -87,7 +87,7 @@
     "mkdirp": "0.5.1",
     "p4-css": "1.1.0",
     "prettier": "1.17.1",
-    "pretty-quick": "1.10.0",
+    "pretty-quick": "1.11.0",
     "prop-types": "15.7.2",
     "react": "16.8.6",
     "react-dom": "16.8.6",
