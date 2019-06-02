@@ -104,7 +104,7 @@
     "tslint-config-common": "1.6.0",
     "typescript": "3.5.1",
     "webpack": "4.30.0",
-    "yalc": "1.0.0-pre.27"
+    "yalc": "1.0.0-pre.28"
   },
   "config": {
     "commitizen": {
