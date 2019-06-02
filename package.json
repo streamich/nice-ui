@@ -74,7 +74,7 @@
     "ci-scripts": "0.10.0",
     "concurrently": "4.1.0",
     "enzyme": "3.9.0",
-    "enzyme-adapter-react-16": "1.12.1",
+    "enzyme-adapter-react-16": "1.13.2",
     "enzyme-to-json": "3.3.5",
     "fork-ts-checker-webpack-plugin": "0.5.2",
     "git-cz": "1.8.4",
