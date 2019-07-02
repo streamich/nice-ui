@@ -72,7 +72,7 @@
     "@types/react-dom": "16.8.4",
     "babel-loader": "8.0.6",
     "ci-scripts": "0.10.0",
-    "concurrently": "4.1.0",
+    "concurrently": "4.1.1",
     "enzyme": "3.9.0",
     "enzyme-adapter-react-16": "1.13.2",
     "enzyme-to-json": "3.3.5",
