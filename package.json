@@ -73,7 +73,7 @@
     "babel-loader": "8.0.6",
     "ci-scripts": "0.10.0",
     "concurrently": "4.1.1",
-    "enzyme": "3.9.0",
+    "enzyme": "3.10.0",
     "enzyme-adapter-react-16": "1.14.0",
     "enzyme-to-json": "3.3.5",
     "fork-ts-checker-webpack-plugin": "0.5.2",
