@@ -103,7 +103,7 @@
     "tslint": "5.19.0",
     "tslint-config-common": "1.6.0",
     "typescript": "3.6.2",
-    "webpack": "4.39.1",
+    "webpack": "4.39.3",
     "yalc": "1.0.0-pre.34"
   },
   "config": {
