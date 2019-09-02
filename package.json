@@ -93,7 +93,7 @@
     "react-dom": "16.8.6",
     "react-markdown": "4.1.0",
     "react-test-renderer": "16.8.6",
-    "rimraf": "2.6.3",
+    "rimraf": "2.7.1",
     "semantic-release": "15.13.19",
     "storybook-readme": "4.0.5",
     "to-string-loader": "1.1.5",
