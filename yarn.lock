@@ -4455,15 +4455,15 @@ ci-info@^2.0.0:
   resolved "https://registry.yarnpkg.com/ci-info/-/ci-info-2.0.0.tgz#67a9e964be31a51e15e5010d58e6f12834002f46"
   integrity sha512-5tK7EtrZ0N+OLFMthtqOj4fI2Jeb88C4CAZPu25LDVUgXJ0A3Js4PMGqrn0JU1W0Mh1/Z8wZzYPxqUrXeBboCQ==
 
-ci-scripts@0.10.0:
-  version "0.10.0"
-  resolved "https://registry.yarnpkg.com/ci-scripts/-/ci-scripts-0.10.0.tgz#7d691f6e88045becfac87fefe379034a5e4f5c27"
-  integrity sha512-oQtZH+/kk6UhZV3IR6j09ghLVkVPASPEhmVtGRLt4v0NS5nJ0M8xTdgJpdnOSnmE1EMotYW/MdS2LBmejV6dvw==
+ci-scripts@0.11.0:
+  version "0.11.0"
+  resolved "https://registry.yarnpkg.com/ci-scripts/-/ci-scripts-0.11.0.tgz#7b7c48550bdc65f47b707e7a485ffe8588d6e88d"
+  integrity sha512-Tk68KDkJyAteUzb7ARquaLSX/DGV7wshRDqY/F+U6qRFnkqzrgmUqUuFJd8f/l3+UPUe/DbdZi0KQX6Jrq5+xw==
   dependencies:
     chalk "^2.4.1"
     conventional-recommended-bump "^2.0.9"
     cross-ci "^1.0.0"
-    marked "^0.3.19"
+    marked "^0.7.0"
     marked-terminal "^2.0.0"
     minimist "^1.2.0"
     request "^2.85.0"
@@ -9707,11 +9707,6 @@ marked-terminal@^3.2.0:
     cli-table "^0.3.1"
     node-emoji "^1.4.1"
     supports-hyperlinks "^1.0.1"
-
-marked@^0.3.19:
-  version "0.3.19"
-  resolved "https://registry.yarnpkg.com/marked/-/marked-0.3.19.tgz#5d47f709c4c9fc3c216b6d46127280f40b39d790"
-  integrity sha512-ea2eGWOqNxPcXv8dyERdSr/6FmzvWwzjMxpfGB/sbMccXoct+xY+YukPD+QTUZwyvK7BZwcr4m21WBOW41pAkg==
 
 marked@^0.5.0:
   version "0.5.2"
