@@ -95,7 +95,7 @@
     "react-test-renderer": "16.10.1",
     "rimraf": "2.7.1",
     "semantic-release": "15.13.19",
-    "storybook-readme": "4.0.5",
+    "storybook-readme": "5.0.9",
     "to-string-loader": "1.1.5",
     "ts-jest": "24.1.0",
     "ts-loader": "5.4.5",
