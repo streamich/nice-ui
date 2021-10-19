@@ -102,7 +102,7 @@
     "ts-node": "8.4.1",
     "tslint": "5.20.0",
     "tslint-config-common": "1.6.0",
-    "typescript": "3.6.3",
+    "typescript": "3.9.10",
     "webpack": "4.41.0",
     "yalc": "1.0.0-pre.34"
   },
