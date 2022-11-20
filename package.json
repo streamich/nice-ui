@@ -54,7 +54,7 @@
   },
   "devDependencies": {
     "@babel/core": "7.6.2",
-    "@emotion/core": "10.0.9",
+    "@emotion/core": "10.3.1",
     "@semantic-release/changelog": "3.0.4",
     "@semantic-release/git": "7.0.16",
     "@semantic-release/npm": "5.1.13",
