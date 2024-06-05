@@ -53,7 +53,7 @@
     "react-dom": "*"
   },
   "devDependencies": {
-    "@babel/core": "7.6.2",
+    "@babel/core": "7.24.7",
     "@emotion/core": "10.0.9",
     "@semantic-release/changelog": "3.0.4",
     "@semantic-release/git": "7.0.16",
