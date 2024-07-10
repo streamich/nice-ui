@@ -1,12 +1,9 @@
 import * as React from 'react';
-import {RenderNode, IHeading} from '../types';
+import {RenderNode} from '../types';
+import Heading from '../block/Heading';
 
-const {createElement} = React;
-
-const renderHeading: RenderNode = (renderers, flat, idx, props, state) => {
-  const node = flat.nodes[idx];
-  const tag = `h${(node as any).depth}`;
-  return createElement(tag, null, renderers.children(renderers, flat, idx, props, state));
+const renderHeading: RenderNode = (renderers, ast, idx, props, state) => {
+  return <Heading idx={idx}>{renderers.children(renderers, ast, idx, props, state)}</Heading>;
 };
 
 export default renderHeading;

@@ -1,0 +1,14 @@
+import {put, theme} from 'nano-theme';
+
+put('*:focus,button:focus,a:focus', {
+  outlineOffset: '1px',
+  out: `2px solid ${theme.color.sem.blue[0]}`,
+});
+
+put('*:active,button:active,a:active', {
+  out: 0,
+});
+
+put('a,button', {
+  bdrad: '2px',
+});

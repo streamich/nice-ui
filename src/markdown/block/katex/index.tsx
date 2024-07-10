@@ -1,12 +1,20 @@
 import * as React from 'react';
-import {BlockMath} from 'react-katex';
-import {IMarkdownBlockCodeProps, blockDefaultProps} from '../shared';
-import loadKatexCss from '../../util/loadKatexCss';
+import {IMarkdownBlockCodeProps} from '../shared';
+import {rule} from 'nano-theme';
+import MarkdownBlock from '../../util/MarkdownBlock';
+import KatexDisplay from '../../components/katex/KatexDisplay';
 
-loadKatexCss();
+const blockClass = rule({
+  w: '100%',
+  maxW: '100%',
+  overflowY: 'hidden',
+  overflowX: 'scroll',
+});
 
-const Katex: React.SFC<IMarkdownBlockCodeProps> = (props) => <BlockMath math={props.source} />;
-
-Katex.defaultProps = blockDefaultProps;
+const Katex: React.FC<IMarkdownBlockCodeProps> = (props) => (
+  <MarkdownBlock idx={props.idx} className={blockClass}>
+    <KatexDisplay source={props.source} />
+  </MarkdownBlock>
+);
 
 export default Katex;

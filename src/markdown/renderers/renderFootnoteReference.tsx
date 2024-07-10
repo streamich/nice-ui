@@ -1,11 +1,34 @@
 import * as React from 'react';
 import {RenderNode} from '../types';
+import {rule} from 'nano-theme';
+import {IFootnoteReference} from 'md-mdast/lib/types';
 
-const renderFootnoteReference: RenderNode = (renderers, flat, idx, props, state) => {
-  const node = flat.nodes[idx] as any;
-  const definition = flat.nodes[flat.footnotes[node.value]] as any;
+const blockClass = rule({
+  fz: '.68em',
+  op: 0.8,
+  letterSpacing: '0.05em',
+  cur: 'default',
+});
 
-  return <sup className={'md-footnote'}>[{definition.cnt}]</sup>;
+const braceClass = rule({
+  op: 0.35,
+  [`.${blockClass.trim()}:hover &`]: {
+    op: 1,
+  },
+});
+
+const renderFootnoteReference: RenderNode = (renderers, flat, idx) => {
+  const node = flat.nodes[idx] as IFootnoteReference;
+  const {value = ''} = node;
+  const definition = flat.nodes[flat.footnotes[value]] as any;
+
+  return (
+    <sup className={blockClass} title={value}>
+      <span className={braceClass}>[</span>
+      {definition.cnt}
+      <span className={braceClass}>]</span>
+    </sup>
+  );
 };
 
 export default renderFootnoteReference;

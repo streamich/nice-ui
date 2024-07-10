@@ -1,4 +1,5 @@
 import * as React from 'react';
+import {Link} from 'react-router-lite';
 import {RenderNode} from '../types';
 
 const renderLink: RenderNode = (renderers, flat, idx, props, state) => {
@@ -13,8 +14,16 @@ const renderLink: RenderNode = (renderers, flat, idx, props, state) => {
     }
   }
 
+  if (url[0] === '/') {
+    return (
+      <Link a to={url} title={title}>
+        {renderers.children(renderers, flat, idx, props, state)}
+      </Link>
+    );
+  }
+
   return (
-    <a href={url} title={title}>
+    <a href={url} title={title} target="_blank" rel="noopener noreferrer">
       {renderers.children(renderers, flat, idx, props, state)}
     </a>
   );

@@ -1,10 +1,11 @@
 export interface IMarkdownBlockProps {
-  onError?: (error) => void;
-  renderLoading?: (props: IMarkdownBlockProps) => React.ReactElement<any>;
-  renderError?: (props: IMarkdownBlockProps, error?: Error) => React.ReactElement<any>;
+  onError?: (error: Error | unknown) => void;
+  renderLoading?: (props: IMarkdownBlockProps) => React.ReactNode;
+  renderError: (props: IMarkdownBlockProps, error?: Error) => React.ReactNode;
 }
 
 export interface IMarkdownBlockCodeProps extends IMarkdownBlockProps {
+  idx: number;
   source: string;
 }
 

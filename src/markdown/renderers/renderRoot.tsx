@@ -1,8 +1,7 @@
-import * as React from 'react';
-import {RenderNode, IRoot} from '../types';
+import {RenderNode} from '../types';
 
 const renderRoot: RenderNode = (renderers, flat, idx, props, state) => {
-  return <div>{renderers.children(renderers, flat, idx, props, state)}</div>;
+  return renderers.children(renderers, flat, idx, props, state);
 };
 
 export default renderRoot;

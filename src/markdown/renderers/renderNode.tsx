@@ -3,7 +3,7 @@ import {RenderNode} from '../types';
 
 const renderNode: RenderNode = (renderers, flat, idx, props, state) => {
   const node = flat.nodes[idx];
-  const renderer = renderers[node.type] as RenderNode | undefined;
+  const renderer = renderers[node.type as any as keyof typeof renderers] as unknown as RenderNode | undefined;
 
   if (renderer) {
     try {

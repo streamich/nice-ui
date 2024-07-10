@@ -15,15 +15,20 @@ import renderInlineCode from './renderInlineCode';
 import renderInlineMath from './renderInlineMath';
 import renderInlineLink from './renderInlineLink';
 import renderMark from './renderMark';
+import renderMath from './renderMath';
 import renderNode from './renderNode';
 import renderLink from './renderLink';
 import renderList from './renderList';
 import renderListItem from './renderListItem';
 import renderParagraph from './renderParagraph';
+import renderPortal from './renderPortal';
 import renderRoot from './renderRoot';
 import renderStrong from './renderStrong';
 import renderSub from './renderSub';
 import renderSup from './renderSup';
+import renderTable from './renderTable';
+import renderTableRow from './renderTableRow';
+import renderTableCell from './renderTableCell';
 import renderText from './renderText';
 import renderThematicBreak from './renderThematicBreak';
 import renderUnderline from './renderUnderline';
@@ -43,19 +48,24 @@ export const renderers: Renderers = {
   image: renderImage,
   imageReference: renderImage,
   inlineCode: renderInlineCode,
-  inlineMath: renderInlineMath,
   inlineLink: renderInlineLink,
-  mark: renderMark,
-  node: renderNode,
+  inlineMath: renderInlineMath,
   link: renderLink,
   linkReference: renderLink,
   list: renderList,
   listItem: renderListItem,
+  mark: renderMark,
+  math: renderMath,
+  node: renderNode,
   paragraph: renderParagraph,
+  portal: renderPortal,
   root: renderRoot,
   strong: renderStrong,
   sub: renderSub,
   sup: renderSup,
+  table: renderTable,
+  tableCell: renderTableCell,
+  tableRow: renderTableRow,
   text: renderText,
   thematicBreak: renderThematicBreak,
   underline: renderUnderline,

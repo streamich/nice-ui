@@ -1,32 +1,38 @@
 import * as React from 'react';
-import {Flat} from 'mdast-flat/lib/types';
-import MdastFlat from './MdastFlat';
-import {toMDASTF} from './parser';
+import {MdastFlat} from './MdastFlat';
+import {md, mdi} from './parser';
+import {MdastProps} from './types';
 
-export interface Props {
+const {useMemo} = React;
+
+export interface Props
+  extends Pick<
+    MdastProps,
+    | 'to'
+    | 'isCompact'
+    | 'isFullWidth'
+    | 'hideFootnotes'
+    | 'isExpandable'
+    | 'expand'
+    | 'fontSize'
+    | 'onDoubleClick'
+    | 'scaleUpEmojiSrc'
+    | 'placeholdersAfter'
+    | 'placeholdersAfterLength'
+    | 'maxPlaceholders'
+    | 'LoadingBlock'
+  > {
   src?: string | null;
-  toMDASTF?: (markdown: string) => Flat;
-  isCompact?: boolean;
+
+  /**
+   * Parse Markdown source only to inline elements and render
+   * only inline elements.
+   */
+  inline?: boolean;
 }
 
-export interface State {
-  flat?: Flat;
-}
+export const Markdown: React.FC<Props> = ({src, inline, ...mdastFLatProps}) => {
+  const ast = useMemo(() => (inline ? mdi : md)(src || ''), [inline, src]);
 
-class Markdown extends React.PureComponent<Props, State> {
-  static defaultProps = {
-    toMDASTF,
-  };
-
-  state: State = {};
-
-  render() {
-    const {props} = this;
-    const {isCompact, src} = props;
-    const mdast = toMDASTF(src || '');
-
-    return <MdastFlat ast={mdast} isCompact={isCompact} />;
-  }
-}
-
-export default Markdown;
+  return <MdastFlat {...mdastFLatProps} inline={inline} ast={ast} />;
+};

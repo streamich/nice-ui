@@ -1,5 +1,5 @@
 import * as React from 'react';
-const emojiJs = require('emoji-js');
+const emojiJs = require('emoji-js'); // eslint-disable-line
 
 const emoji = new emojiJs();
 emoji.replace_mode = 'unified';
@@ -9,9 +9,9 @@ export interface EmojiInlineProps {
   renderVoid?: (text: string) => React.ReactElement | null;
 }
 
-const renderVoidDefault = (source) => <span>{source}</span>;
+const renderVoidDefault = (source: React.ReactNode) => <span>{source}</span>;
 
-const EmojiInline: React.SFC<EmojiInlineProps> = React.memo(({source, renderVoid = renderVoidDefault}) => {
+export const EmojiInline: React.FC<EmojiInlineProps> = React.memo(({source, renderVoid = renderVoidDefault}) => {
   const text = ':' + source + ':';
   const icon = emoji.replace_colons(text);
 
