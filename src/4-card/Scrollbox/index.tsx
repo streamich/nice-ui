@@ -67,7 +67,12 @@ export const Scrollbox: React.FC<ScrollboxProps> = ({children, ...rest}) => {
 
   return (
     <div className={wrapClass}>
-      <div {...rest} ref={ref} className={(rest.className || '') + blockClass} style={{...rest.style, overflowY: shadows[0] || shadows[1] ? 'auto' : undefined,}}>
+      <div
+        {...rest}
+        ref={ref}
+        className={(rest.className || '') + blockClass}
+        style={{...rest.style, overflowY: shadows[0] || shadows[1] ? 'auto' : undefined}}
+      >
         {children}
       </div>
       <div className={shadowTopClass} style={{opacity: shadows[0] ? 1 : 0, background}} />
