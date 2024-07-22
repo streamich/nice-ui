@@ -3830,12 +3830,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/codemirror@npm:^0.0.76":
-  version: 0.0.76
-  resolution: "@types/codemirror@npm:0.0.76"
+"@types/codemirror@npm:^5.0.0":
+  version: 5.60.15
+  resolution: "@types/codemirror@npm:5.60.15"
   dependencies:
     "@types/tern": "npm:*"
-  checksum: 10c0/26c9c9f1febb1ad9e1abb87defd4316f0d957a82645b3b6901ba8e575a2d3b41ada644c2549c8bee0654cac700cab0256a06c1522c9a697b6db9999d32039fa3
+  checksum: 10c0/4d32ee8d335650956fc59b26f29909de0656ce9c68f7527caf2aa68e6a6a2e8be6ec7a6b80c02bfab7ac6b17040d6c2d83d394b9d00fdbf4b5588691f2efbba6
   languageName: node
   linkType: hard
 
@@ -11527,7 +11527,7 @@ __metadata:
     "@storybook/react": "npm:^8.1.4"
     "@storybook/react-webpack5": "npm:^8.1.4"
     "@storybook/test": "npm:^8.1.4"
-    "@types/codemirror": "npm:^0.0.76"
+    "@types/codemirror": "npm:^5.0.0"
     "@types/emoji-js": "npm:^3"
     "@types/jest": "npm:^29.5.12"
     "@types/papaparse": "npm:^5"
