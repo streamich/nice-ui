@@ -10,6 +10,7 @@ const wrapClass = rule({
 
 const blockClass = rule({
   w: '100%',
+  ovy: 'auto',
 });
 
 const shadowTopClass = rule({
@@ -67,12 +68,7 @@ export const Scrollbox: React.FC<ScrollboxProps> = ({children, ...rest}) => {
 
   return (
     <div className={wrapClass}>
-      <div
-        {...rest}
-        ref={ref}
-        className={(rest.className || '') + blockClass}
-        style={{...rest.style, overflowY: shadows[0] || shadows[1] ? 'auto' : undefined}}
-      >
+      <div {...rest} ref={ref} className={(rest.className || '') + blockClass}>
         {children}
       </div>
       <div className={shadowTopClass} style={{opacity: shadows[0] ? 1 : 0, background}} />
