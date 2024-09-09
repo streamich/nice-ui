@@ -1549,16 +1549,18 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@chromatic-com/storybook@npm:^1.5.0":
-  version: 1.6.1
-  resolution: "@chromatic-com/storybook@npm:1.6.1"
+"@chromatic-com/storybook@npm:^2.0.0":
+  version: 2.0.0
+  resolution: "@chromatic-com/storybook@npm:2.0.0"
   dependencies:
     chromatic: "npm:^11.4.0"
     filesize: "npm:^10.0.12"
     jsonfile: "npm:^6.1.0"
     react-confetti: "npm:^6.1.0"
     strip-ansi: "npm:^7.1.0"
-  checksum: 10c0/411a2c9f44542c4940e6452846f1c2b71f4529640cefcf60396c1eb0a16cd2a4d27ba648523c73a7ca9b5b64f2a67b19159281add6730d0a237336a3856c8f37
+  peerDependencies:
+    storybook: ^8.2.0
+  checksum: 10c0/4c4df6a331c251abb827e2db500188a042ec84bc78e93172ca0101cbd8e9c5d4a3eb480c1a35e545e54cb0f12ec7e6d40419a3cf4c806b92081e201ca6914be0
   languageName: node
   linkType: hard
 
@@ -11494,7 +11496,7 @@ __metadata:
     "@babel/preset-env": "npm:^7.23.3"
     "@babel/preset-react": "npm:^7.23.3"
     "@babel/preset-typescript": "npm:^7.23.3"
-    "@chromatic-com/storybook": "npm:^1.5.0"
+    "@chromatic-com/storybook": "npm:^2.0.0"
     "@material-ui/core": "npm:^4.12.4"
     "@storybook/addon-essentials": "npm:^8.1.4"
     "@storybook/addon-interactions": "npm:^8.1.4"
