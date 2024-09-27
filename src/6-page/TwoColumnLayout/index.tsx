@@ -27,7 +27,7 @@ const blockSmallScreenClass = rule({
 const asideClass = rule({
   bxz: 'border-box',
   flex: `0 0 ${NiceUiSizes.SidebarWidth}px`,
-  pad: `16px ${padding}px 16px 0`,
+  pad: `16px ${padding / 2}px 16px 0`,
   '@media only screen and (max-width: 1000px)': {
     w: '100%',
     pad: '4px 16px 16px 0',
@@ -38,7 +38,7 @@ const sectionClass = rule({
   bxz: 'border-box',
   flex: '1 1',
   maxW: `calc(100% - ${NiceUiSizes.SidebarWidth + padding}px)`,
-  pad: `16px 0 16px ${padding}px`,
+  pad: `16px 0 16px ${padding / 2}px`,
   [`.${blockSmallScreenClass.trim()} &`]: {
     pad: '16px 24px',
   },
@@ -78,7 +78,7 @@ const TwoColumnLayout: React.FC<Props> = ({top = 0, left, right}) => {
 
   return (
     <div className={blockClass}>
-      <S offsetTop={NiceUiSizes.TopNavHeight + top}>
+      <S offsetTop={top}>
         <div className={asideClass}>{left}</div>
       </S>
       <section className={sectionClass}>{right}</section>
