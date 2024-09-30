@@ -27,7 +27,7 @@ const blockClass = rule({
 });
 
 const itemClass = rule({
-  ...theme.font.ui2,
+  ...theme.font.ui2.mid,
   fz: '14px',
   pad: `6px ${padding}px`,
 });
