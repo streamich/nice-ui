@@ -29,9 +29,16 @@ export const Menu: React.FC<Props> = ({items, as, style, level = 1}) => {
   const theme = useTheme();
 
   return (
-    <Component style={style} className={level > 1 ? nestedClass({
-      bdl: '1px solid ' + theme.g(0.9),
-    }) : ''}>
+    <Component
+      style={style}
+      className={
+        level > 1
+          ? nestedClass({
+              bdl: '1px solid ' + theme.g(0.9),
+            })
+          : ''
+      }
+    >
       {items.map(({key, menuItem, icon, children, ...rest}) => {
         const name = typeof menuItem === 'function' ? menuItem(t) : menuItem;
         let item = (
@@ -45,10 +52,7 @@ export const Menu: React.FC<Props> = ({items, as, style, level = 1}) => {
           item = (
             <React.Fragment key={key + '_child'}>
               {item}
-              <Menu
-                items={children}
-                level={level + 1}
-              />
+              <Menu items={children} level={level + 1} />
             </React.Fragment>
           );
         }
