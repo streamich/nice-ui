@@ -37,8 +37,7 @@ const asideClass = rule({
 const sectionClass = rule({
   bxz: 'border-box',
   flex: '1 1',
-  maxW: `calc(100% - ${NiceUiSizes.SidebarWidth + padding}px)`,
-  pad: `16px 0 16px ${padding}px`,
+  pad: `0 0 0 ${padding}px`,
   [`.${blockSmallScreenClass.trim()} &`]: {
     pad: '16px 24px',
   },

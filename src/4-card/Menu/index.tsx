@@ -1,7 +1,12 @@
 import * as React from 'react';
-import {useTheme} from 'nano-theme';
+import {drule, useTheme} from 'nano-theme';
 import {useT} from 'use-t';
 import {MenuItem, Props as MenuItemProps} from './MenuItem';
+
+const nestedClass = drule({
+  pd: '0 0 0 10px',
+  mr: '6px 0 0 12px',
+});
 
 export interface MenuItemDef extends Omit<MenuItemProps, 'children'> {
   key: string;
@@ -24,7 +29,9 @@ export const Menu: React.FC<Props> = ({items, as, style, level = 1}) => {
   const theme = useTheme();
 
   return (
-    <Component style={style}>
+    <Component style={style} className={level > 1 ? nestedClass({
+      bdl: '1px solid ' + theme.g(0.9),
+    }) : ''}>
       {items.map(({key, menuItem, icon, children, ...rest}) => {
         const name = typeof menuItem === 'function' ? menuItem(t) : menuItem;
         let item = (
@@ -41,11 +48,6 @@ export const Menu: React.FC<Props> = ({items, as, style, level = 1}) => {
               <Menu
                 items={children}
                 level={level + 1}
-                style={{
-                  padding: '0 0 0 10px',
-                  margin: '6px 0 12px 12px',
-                  borderLeft: '1px solid ' + theme.g(0.9),
-                }}
               />
             </React.Fragment>
           );

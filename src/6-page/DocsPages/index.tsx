@@ -24,7 +24,7 @@ export interface Props {
 }
 
 export const DocsPages: React.FC<Props> = (props) => {
-  const {steps, page, top = NiceUiSizes.TopNavHeight + NiceUiSizes.TopNavHeight} = props;
+  const {steps, page, top = NiceUiSizes.TopNavHeight + NiceUiSizes.TopNavHeight - 32} = props;
   const [, ...otherSteps] = steps;
 
   // Preload in the background all children of the current page.

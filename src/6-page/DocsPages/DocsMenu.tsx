@@ -25,7 +25,7 @@ const DocsMenu: React.FC<Props> = ({steps, page}) => {
   const path = steps ? page.to + '/' + steps.slice(1).join('/') : '';
 
   return (
-    <div style={{width: NiceUiSizes.SidebarWidth}}>
+    <div style={{paddingTop: 32, width: NiceUiSizes.SidebarWidth}}>
       <Space />
       <Menu items={[pageToItem(page, path)]} />
     </div>
