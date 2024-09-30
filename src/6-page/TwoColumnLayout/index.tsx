@@ -27,7 +27,7 @@ const blockSmallScreenClass = rule({
 const asideClass = rule({
   bxz: 'border-box',
   flex: `0 0 ${NiceUiSizes.SidebarWidth}px`,
-  pad: `16px ${padding / 2}px 16px 0`,
+  pad: `0 ${padding}px 0 0`,
   '@media only screen and (max-width: 1000px)': {
     w: '100%',
     pad: '4px 16px 16px 0',
@@ -38,7 +38,7 @@ const sectionClass = rule({
   bxz: 'border-box',
   flex: '1 1',
   maxW: `calc(100% - ${NiceUiSizes.SidebarWidth + padding}px)`,
-  pad: `16px 0 16px ${padding / 2}px`,
+  pad: `16px 0 16px ${padding}px`,
   [`.${blockSmallScreenClass.trim()} &`]: {
     pad: '16px 24px',
   },
@@ -63,7 +63,7 @@ const TwoColumnLayout: React.FC<Props> = ({top = 0, left, right}) => {
           </div>
         </Drawer>
         <div className={blockClass + blockSmallScreenClass}>
-          <div className={asideClass}>
+          <div className={asideClass} style={{paddingTop: 16, paddingBottom: 16}}>
             <BasicButton border size={32} onClick={() => setSidebar((x) => !x)}>
               <Iconista set="ant_outline" icon="menu" width={16} height={16} />
             </BasicButton>

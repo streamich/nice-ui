@@ -20,10 +20,11 @@ const findPage = (page: ContentPage, steps: string[]): ContentPage | undefined =
 export interface Props {
   steps: string[];
   page: ContentPage;
+  top?: number;
 }
 
 export const DocsPages: React.FC<Props> = (props) => {
-  const {steps, page} = props;
+  const {steps, page, top = NiceUiSizes.TopNavHeight + NiceUiSizes.TopNavHeight} = props;
   const [, ...otherSteps] = steps;
 
   // Preload in the background all children of the current page.
@@ -41,11 +42,7 @@ export const DocsPages: React.FC<Props> = (props) => {
   return (
     <Page>
       <Space size={2} />
-      <TwoColumnLayout
-        top={NiceUiSizes.TopNavHeight + +64 + 20}
-        left={<DocsMenu steps={steps} page={page} />}
-        right={right}
-      />
+      <TwoColumnLayout left={<DocsMenu steps={steps} page={page} />} top={top} right={right} />
     </Page>
   );
 };

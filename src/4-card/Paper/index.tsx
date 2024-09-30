@@ -1,9 +1,11 @@
 import * as React from 'react';
-import {useTheme, makeRule, rule} from 'nano-theme';
+import {useTheme, makeRule, rule, drule} from 'nano-theme';
 
 export const blockClass = rule({
   bdrad: '4px',
 });
+
+const blockClass2 = drule({});
 
 const useBlockClass = makeRule((theme) => ({
   bg: theme.bg,
@@ -24,11 +26,8 @@ const useHoverBlockClass = makeRule((theme) => ({
   },
 }));
 
-const hoverElevateClass = rule({
+const hoverElevateClass = drule({
   trs: 'box-shadow 0.5s',
-  '&:hover': {
-    boxShadow: '0 3px 5px rgba(0,0,0,.1), 0 10px 20px rgba(0,0,0,.1)',
-  },
 });
 
 export interface PaperProps extends React.AllHTMLAttributes<any> {
@@ -46,13 +45,7 @@ export const Paper: React.FC<PaperProps> = (props) => {
   const dynamicBlockClass = useBlockClass();
   const dynamicHoverBlockClass = useHoverBlockClass();
 
-  const style: React.CSSProperties = {
-    boxShadow: level
-      ? `0px 1px ${1 + level * 2}px 0px ${theme.g(0, 0.2)}, 0px ${level}px ${level}px 0px ${theme.g(0, 0.14)}, 0px ${
-          1 + level
-        }px 1px -${level}px ${theme.g(0, 0.12)}`
-      : undefined,
-  };
+  const style: React.CSSProperties = {};
 
   if (!hover) {
     style.border = `1px solid ${theme.g(0, contrast ? 0.2 : 0.1)}`;
@@ -64,7 +57,6 @@ export const Paper: React.FC<PaperProps> = (props) => {
 
   if (typeof fill === 'number') {
     style.background = fill ? theme.g(0, fill * 0.02) : theme.bg;
-    style.boxShadow = 'none';
   }
 
   if (round) {
@@ -75,11 +67,23 @@ export const Paper: React.FC<PaperProps> = (props) => {
     ...rest,
     className:
       props.className +
-      '' +
       blockClass +
+      blockClass2({
+        bxsh: level
+          ? `0px 1px ${1 + level * 2}px 0px ${theme.g(0, 0.2)}, 0px ${level}px ${level}px 0px ${theme.g(0, 0.14)}, 0px ${
+              1 + level
+            }px 1px -${level}px ${theme.g(0, 0.12)}`
+          : 'none',
+      }) +
       dynamicBlockClass +
       (hover ? dynamicHoverBlockClass : '') +
-      (hoverElevate ? hoverElevateClass : ''),
+      (hoverElevate
+        ? hoverElevateClass({
+            '&:hover': {
+              bxsh: '0 3px 5px rgba(0,0,0,.1), 0 10px 20px rgba(0,0,0,.1)',
+            },
+          })
+        : ''),
     style: {...style, ...(props.style || {})},
   });
 };
