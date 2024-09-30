@@ -19,7 +19,7 @@ const renderers: typeof defaultRenderers = {
 };
 
 const blockClass = rule({
-  ...theme.font.ui2,
+  ...theme.font.ui1.mid,
   fw: 400,
   p: {
     ...theme.font.ui3,
@@ -30,7 +30,7 @@ const blockClass = rule({
     lh: '1.5em',
   },
   [`& .${introClass.trim()} p`]: {
-    ...theme.font.ui2,
+    ...theme.font.ui1.mid,
     lh: '1.5em',
   },
   '& p+p, & pre+p, & pre+ul, & pre+div, & ul+p, & div:not(.invisible)+p, & ul+div:not(.invisible)': {
@@ -58,7 +58,7 @@ const blockClass = rule({
     padt: 0,
   },
   'h1,h2,h3,h4,h5,h6': {
-    ...theme.font.ui2,
+    ...theme.font.ui1.mid,
     fw: 500,
     padt: '1.5em',
     mar: 0,

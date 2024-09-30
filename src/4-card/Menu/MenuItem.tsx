@@ -3,9 +3,8 @@ import {rule, makeRule, theme} from 'nano-theme';
 import {Link} from 'react-router-lite';
 
 const blockClass = rule({
-  ...theme.font.ui2,
-  fw: 500,
-  fz: '13px',
+  ...theme.font.ui1.mid,
+  fz: '15px',
   d: 'flex',
   w: '100%',
   bxz: 'border-box',

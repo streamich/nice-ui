@@ -5,7 +5,7 @@ import BasicButton from '../BasicButton';
 import {Link} from '../../1-inline/Link';
 
 const blockClass = rule({
-  ...theme.font.ui2,
+  ...theme.font.ui2.mid,
   fz: '14px',
   col: theme.g(0.3),
   fill: theme.g(0.3),

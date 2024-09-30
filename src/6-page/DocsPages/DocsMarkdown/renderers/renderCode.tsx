@@ -12,7 +12,7 @@ import Wide from '../components/Wide';
 import Aside from '../components/Aside';
 
 export const introClass = rule({
-  // ...theme.font.ui2,
+  // ...theme.font.ui2.mid,
   col: theme.g(0.5),
   fz: '0.9em',
   op: 0.9,
