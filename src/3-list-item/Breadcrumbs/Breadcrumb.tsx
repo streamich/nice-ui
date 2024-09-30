@@ -4,7 +4,7 @@ import {Link} from 'react-router-lite';
 
 const blockClass = rule({
   ...theme.font.ui2.bold,
-  fz: '17.6px',
+  fz: '15.6px',
   pad: '4px 8px',
   bdrad: '8px',
   col: theme.g(0.1),
