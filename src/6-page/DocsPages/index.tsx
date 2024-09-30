@@ -41,7 +41,11 @@ export const DocsPages: React.FC<Props> = (props) => {
   return (
     <Page>
       <Space size={2} />
-      <TwoColumnLayout top={NiceUiSizes.TopNavHeight +  + 64 + 20} left={<DocsMenu steps={steps} page={page} />} right={right} />
+      <TwoColumnLayout
+        top={NiceUiSizes.TopNavHeight + +64 + 20}
+        left={<DocsMenu steps={steps} page={page} />}
+        right={right}
+      />
     </Page>
   );
 };
