@@ -69,18 +69,21 @@ export const Paper: React.FC<PaperProps> = (props) => {
       props.className +
       blockClass +
       blockClass2({
-        bxsh: level ? `0px 1px ${1 + level * 2}px 0px ${theme.g(0, 0.2)}, 0px ${level}px ${level}px 0px ${theme.g(0, 0.14)}, 0px ${
-          1 + level
-        }px 1px -${level}px ${theme.g(0, 0.12)}` : 'none'
-        
+        bxsh: level
+          ? `0px 1px ${1 + level * 2}px 0px ${theme.g(0, 0.2)}, 0px ${level}px ${level}px 0px ${theme.g(0, 0.14)}, 0px ${
+              1 + level
+            }px 1px -${level}px ${theme.g(0, 0.12)}`
+          : 'none',
       }) +
       dynamicBlockClass +
       (hover ? dynamicHoverBlockClass : '') +
-      (hoverElevate ? hoverElevateClass({
-        '&:hover': {
-          bxsh: '0 3px 5px rgba(0,0,0,.1), 0 10px 20px rgba(0,0,0,.1)',
-        },
-      }) : ''),
+      (hoverElevate
+        ? hoverElevateClass({
+            '&:hover': {
+              bxsh: '0 3px 5px rgba(0,0,0,.1), 0 10px 20px rgba(0,0,0,.1)',
+            },
+          })
+        : ''),
     style: {...style, ...(props.style || {})},
   });
 };
