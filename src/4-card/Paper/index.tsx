@@ -63,7 +63,6 @@ export const Paper: React.FC<PaperProps> = (props) => {
     style.borderRadius = '16px';
   }
 
-  console.log(style);
   return React.createElement('div', {
     ...rest,
     className:

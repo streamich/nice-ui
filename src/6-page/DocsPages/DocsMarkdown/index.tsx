@@ -19,7 +19,7 @@ const renderers: typeof defaultRenderers = {
 };
 
 const blockClass = rule({
-  ...theme.font.ui1.mid,
+  ...theme.font.sans.mid,
   fw: 400,
   p: {
     ...theme.font.ui3,
@@ -130,7 +130,7 @@ export interface Props {
   display?: boolean;
 }
 
-const DocsMarkdown: React.FC<Props> = ({ast, fontSize, font1, contents, contentsRight, contentWidth, display}) => {
+const DocsMarkdown: React.FC<Props> = ({ast, fontSize = 17.8, font1, contents, contentsRight, contentWidth, display}) => {
   const [resolvedAst, setResolvedAst] = React.useState(typeof ast === 'function' ? null : ast);
 
   React.useEffect(() => {

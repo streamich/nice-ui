@@ -7,6 +7,7 @@ import {pageutils} from './util';
 import {Space} from '../../3-list-item/Space';
 import TwoColumnLayout from '../TwoColumnLayout';
 import {Page} from '../Page';
+import {NiceUiSizes} from '../../constants';
 
 const findPage = (page: ContentPage, steps: string[]): ContentPage | undefined => {
   if (!steps.length) return page;
@@ -19,10 +20,11 @@ const findPage = (page: ContentPage, steps: string[]): ContentPage | undefined =
 export interface Props {
   steps: string[];
   page: ContentPage;
+  top?: number;
 }
 
 export const DocsPages: React.FC<Props> = (props) => {
-  const {steps, page} = props;
+  const {steps, page, top = NiceUiSizes.TopNavHeight + NiceUiSizes.TopNavHeight} = props;
   const [, ...otherSteps] = steps;
 
   // Preload in the background all children of the current page.
@@ -42,6 +44,7 @@ export const DocsPages: React.FC<Props> = (props) => {
       <Space size={2} />
       <TwoColumnLayout
         left={<DocsMenu steps={steps} page={page} />}
+        top={top}
         right={right}
       />
     </Page>

@@ -42,8 +42,8 @@ export const Menu: React.FC<Props> = ({items, as, style, level = 1}) => {
                 items={children}
                 level={level + 1}
                 style={{
-                  padding: '0 0 0 12px',
-                  margin: '4px 0 12px 12px',
+                  padding: '0 0 0 10px',
+                  margin: '6px 0 12px 12px',
                   borderLeft: '1px solid ' + theme.g(0.9),
                 }}
               />
