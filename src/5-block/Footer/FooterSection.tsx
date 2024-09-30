@@ -18,7 +18,7 @@ const sectionListClass = rule({
   pad: '14px 0 0',
   mar: 0,
   li: {
-    ...theme.font.ui2,
+    ...theme.font.ui2.mid,
     fw: 500,
     d: 'flex',
     fz: '14px',
