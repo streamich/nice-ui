@@ -42,7 +42,6 @@ export const DocsPages: React.FC<Props> = (props) => {
     <Page>
       <Space size={2} />
       <TwoColumnLayout
-        top={NiceUiSizes.TopNavHeight + +64 + 20}
         left={<DocsMenu steps={steps} page={page} />}
         right={right}
       />
