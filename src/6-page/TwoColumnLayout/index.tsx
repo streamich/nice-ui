@@ -14,7 +14,7 @@ const blockClass = rule({
   alignItems: 'flex-start',
   bxz: 'border-box',
   maxW: '1300px',
-  mar: '0 auto',
+  mr: '0 auto',
   '@media only screen and (max-width: 1000px)': {
     padt: '8px',
   },
@@ -26,20 +26,23 @@ const blockSmallScreenClass = rule({
 
 const asideClass = rule({
   bxz: 'border-box',
-  flex: `0 0 ${NiceUiSizes.SidebarWidth}px`,
-  pad: `0 ${padding}px 0 0`,
+  f: `0 1 ${NiceUiSizes.SidebarWidth}px`,
+  w: `${NiceUiSizes.SidebarWidth}px`,
+  pd: `0 ${padding}px 0 0`,
   '@media only screen and (max-width: 1000px)': {
     w: '100%',
-    pad: '4px 16px 16px 0',
+    pd: '4px 16px 16px 0',
   },
 });
 
 const sectionClass = rule({
   bxz: 'border-box',
-  flex: '1 1',
-  pad: `0 0 0 ${padding}px`,
+  f: '1 1 auto',
+  pd: `0 0 0 ${padding}px`,
+  w: `calc(100% - ${NiceUiSizes.SidebarWidth}px)`,
+  maxW: `calc(100% - ${NiceUiSizes.SidebarWidth}px)`,
   [`.${blockSmallScreenClass.trim()} &`]: {
-    pad: '16px 24px',
+    pd: '16px 24px',
   },
 });
 
@@ -47,17 +50,26 @@ export interface Props {
   top?: number;
   left: React.ReactNode;
   right: React.ReactNode;
+  sidebarTopPadding?: number;
 }
 
-const TwoColumnLayout: React.FC<Props> = ({top = 0, left, right}) => {
+const TwoColumnLayout: React.FC<Props> = ({top = 0, left, right, sidebarTopPadding}) => {
   const [sidebar, setSidebar] = React.useState(false);
   const {width} = useWindowSize();
 
   if (width < 1000) {
     return (
       <>
-        <Drawer anchor={'left'} open={sidebar} onClose={() => setSidebar((x) => !x)}>
-          <div style={{padding: '32px 16px'}} onClick={() => setSidebar(false)}>
+        <Drawer
+          anchor={'left'}
+          open={sidebar}
+          onClose={() => setSidebar((x) => !x)}
+          PaperProps={{style: {borderRadius: 32}}}
+        >
+          <div
+            style={{padding: 16, minWidth: `calc(min(100vw - 32px, ${NiceUiSizes.SidebarWidth}px))`}}
+            onClick={() => setSidebar(false)}
+          >
             {left}
           </div>
         </Drawer>
@@ -78,7 +90,9 @@ const TwoColumnLayout: React.FC<Props> = ({top = 0, left, right}) => {
   return (
     <div className={blockClass}>
       <S offsetTop={top}>
-        <div className={asideClass}>{left}</div>
+        <div className={asideClass} style={{paddingTop: sidebarTopPadding}}>
+          {left}
+        </div>
       </S>
       <section className={sectionClass}>{right}</section>
     </div>
