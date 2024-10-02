@@ -60,8 +60,16 @@ const TwoColumnLayout: React.FC<Props> = ({top = 0, left, right, sidebarTopPaddi
   if (width < 1000) {
     return (
       <>
-        <Drawer anchor={'left'} open={sidebar} onClose={() => setSidebar((x) => !x)} PaperProps={{style: {borderRadius: 32}}}>
-          <div style={{padding: 16, minWidth: `calc(min(100vw - 32px, ${NiceUiSizes.SidebarWidth}px))`}} onClick={() => setSidebar(false)}>
+        <Drawer
+          anchor={'left'}
+          open={sidebar}
+          onClose={() => setSidebar((x) => !x)}
+          PaperProps={{style: {borderRadius: 32}}}
+        >
+          <div
+            style={{padding: 16, minWidth: `calc(min(100vw - 32px, ${NiceUiSizes.SidebarWidth}px))`}}
+            onClick={() => setSidebar(false)}
+          >
             {left}
           </div>
         </Drawer>
@@ -82,7 +90,9 @@ const TwoColumnLayout: React.FC<Props> = ({top = 0, left, right, sidebarTopPaddi
   return (
     <div className={blockClass}>
       <S offsetTop={top}>
-        <div className={asideClass} style={{paddingTop: sidebarTopPadding}}>{left}</div>
+        <div className={asideClass} style={{paddingTop: sidebarTopPadding}}>
+          {left}
+        </div>
       </S>
       <section className={sectionClass}>{right}</section>
     </div>
