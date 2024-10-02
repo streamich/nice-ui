@@ -50,9 +50,10 @@ export interface Props {
   top?: number;
   left: React.ReactNode;
   right: React.ReactNode;
+  sidebarTopPadding?: number;
 }
 
-const TwoColumnLayout: React.FC<Props> = ({top = 0, left, right}) => {
+const TwoColumnLayout: React.FC<Props> = ({top = 0, left, right, sidebarTopPadding}) => {
   const [sidebar, setSidebar] = React.useState(false);
   const {width} = useWindowSize();
 
@@ -60,7 +61,7 @@ const TwoColumnLayout: React.FC<Props> = ({top = 0, left, right}) => {
     return (
       <>
         <Drawer anchor={'left'} open={sidebar} onClose={() => setSidebar((x) => !x)}>
-          <div style={{padding: '32px 16px', minWidth: `calc(min(100vw - 32px, ${NiceUiSizes.SidebarWidth}px))`}} onClick={() => setSidebar(false)}>
+          <div style={{padding: 16, minWidth: `calc(min(100vw - 32px, ${NiceUiSizes.SidebarWidth}px))`}} onClick={() => setSidebar(false)}>
             {left}
           </div>
         </Drawer>
@@ -81,7 +82,7 @@ const TwoColumnLayout: React.FC<Props> = ({top = 0, left, right}) => {
   return (
     <div className={blockClass}>
       <S offsetTop={top}>
-        <div className={asideClass}>{left}</div>
+        <div className={asideClass} style={{paddingTop: sidebarTopPadding}}>{left}</div>
       </S>
       <section className={sectionClass}>{right}</section>
     </div>

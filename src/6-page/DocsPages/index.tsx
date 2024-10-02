@@ -42,7 +42,7 @@ export const DocsPages: React.FC<Props> = (props) => {
   return (
     <Page>
       <Space size={2} />
-      <TwoColumnLayout left={<DocsMenu steps={steps} page={page} />} top={top} right={right} />
+      <TwoColumnLayout sidebarTopPadding={32} left={<DocsMenu steps={steps} page={page} />} top={top} right={right} />
     </Page>
   );
 };
