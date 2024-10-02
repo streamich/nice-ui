@@ -60,7 +60,7 @@ const TwoColumnLayout: React.FC<Props> = ({top = 0, left, right, sidebarTopPaddi
   if (width < 1000) {
     return (
       <>
-        <Drawer anchor={'left'} open={sidebar} onClose={() => setSidebar((x) => !x)}>
+        <Drawer anchor={'left'} open={sidebar} onClose={() => setSidebar((x) => !x)} PaperProps={{style: {borderRadius: 32}}}>
           <div style={{padding: 16, minWidth: `calc(min(100vw - 32px, ${NiceUiSizes.SidebarWidth}px))`}} onClick={() => setSidebar(false)}>
             {left}
           </div>
