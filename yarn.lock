@@ -8869,7 +8869,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"inline-style-prefixer@npm:^7.0.0":
+"inline-style-prefixer@npm:^7.0.0, inline-style-prefixer@npm:^7.0.1":
   version: 7.0.1
   resolution: "inline-style-prefixer@npm:7.0.1"
   dependencies:
@@ -11425,7 +11425,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"nano-css@npm:^5.0.0, nano-css@npm:^5.3.0, nano-css@npm:^5.6.0, nano-css@npm:^5.6.1":
+"nano-css@npm:^5.0.0, nano-css@npm:^5.3.0, nano-css@npm:^5.6.1":
   version: 5.6.1
   resolution: "nano-css@npm:5.6.1"
   dependencies:
@@ -11444,16 +11444,35 @@ __metadata:
   languageName: node
   linkType: hard
 
-"nano-theme@npm:^1.4.1":
-  version: 1.4.1
-  resolution: "nano-theme@npm:1.4.1"
+"nano-css@npm:^5.6.2":
+  version: 5.6.2
+  resolution: "nano-css@npm:5.6.2"
   dependencies:
-    nano-css: "npm:^5.6.0"
+    "@jridgewell/sourcemap-codec": "npm:^1.4.15"
+    css-tree: "npm:^1.1.2"
+    csstype: "npm:^3.1.2"
+    fastest-stable-stringify: "npm:^2.0.2"
+    inline-style-prefixer: "npm:^7.0.1"
+    rtl-css-js: "npm:^1.16.1"
+    stacktrace-js: "npm:^2.0.2"
+    stylis: "npm:^4.3.0"
+  peerDependencies:
+    react: "*"
+    react-dom: "*"
+  checksum: 10c0/566fb9403815d78a110d68f011e1125cbeeb7299e2e6c60700f316ba0c48dc702c039163eae7a8f213a1390e45cedfdeccc203794d61a61116598adbb83029ec
+  languageName: node
+  linkType: hard
+
+"nano-theme@npm:^1.4.3":
+  version: 1.4.3
+  resolution: "nano-theme@npm:1.4.3"
+  dependencies:
+    nano-css: "npm:^5.6.2"
     react-use: "npm:^17.4.0"
     thingies: "npm:^2.0.0"
   peerDependencies:
     react: "*"
-  checksum: 10c0/19d9159fd86a294d3b940fcca37281e49c8ebbb45ad66c831cdb6474abef6e6730a0531addb6ad4dbccd733bd0d7023cf801dd4540e0873eb41a554f38e19275
+  checksum: 10c0/1c60f4ec91909beb880a899fecd0016959373c54f8c0f05a0c3bbf322f9ff92fe63fc29f1250b9dd16f60837c83fb631ee2c5a6b9b08ad3dd847bbd1b4928f7f
   languageName: node
   linkType: hard
 
@@ -11530,7 +11549,7 @@ __metadata:
     load-script: "npm:^2.0.0"
     md-mdast: "npm:^3.4.0"
     mdast-flat: "npm:^1.6.0"
-    nano-theme: "npm:^1.4.1"
+    nano-theme: "npm:^1.4.3"
     notistack: "npm:^3.0.1"
     papaparse: "npm:^5.4.1"
     prettier: "npm:^3.2.5"
