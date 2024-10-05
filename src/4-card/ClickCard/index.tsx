@@ -26,7 +26,7 @@ const blockClass = rule({
     mar: 0,
   },
   svg: {
-    fill: theme.g(.6),
+    fill: theme.g(0.6),
     col: theme.blue(1),
   },
   '&:hover svg': {
@@ -100,22 +100,34 @@ export interface ClickCardProps {
   onClick?: React.MouseEventHandler;
 }
 
-export const ClickCard: React.FC<ClickCardProps> = ({to, toTitle, title, icon, label, header, tall, noRotate, children, onClick}) => {
+export const ClickCard: React.FC<ClickCardProps> = ({
+  to,
+  toTitle,
+  title,
+  icon,
+  label,
+  header,
+  tall,
+  noRotate,
+  children,
+  onClick,
+}) => {
   const [t] = useT();
 
-  const labelElement = (!!icon || !!label || !!header) ? (
-    <span style={{height: 24, display: 'flex', alignItems: 'center'}}>
-      {icon}
-      {!!label && (
-        <span style={{fontSize: '0.9em', opacity: 0.7, marginLeft: 16}}>
-          <Code gray spacious alt>
-            {t('library')}d
-          </Code>
-        </span>
-      )}
-      {!!header && <span className={stageClass}>{header}</span>}
-    </span>
-  ) : null;
+  const labelElement =
+    !!icon || !!label || !!header ? (
+      <span style={{height: 24, display: 'flex', alignItems: 'center'}}>
+        {icon}
+        {!!label && (
+          <span style={{fontSize: '0.9em', opacity: 0.7, marginLeft: 16}}>
+            <Code gray spacious alt>
+              {t('library')}d
+            </Code>
+          </span>
+        )}
+        {!!header && <span className={stageClass}>{header}</span>}
+      </span>
+    ) : null;
 
   const style: React.CSSProperties = {};
 
@@ -131,10 +143,18 @@ export const ClickCard: React.FC<ClickCardProps> = ({to, toTitle, title, icon, l
         <div className={contentClass}>{children}</div>
       </div>
       <div className={linkClass}>
-        <Link a to={to} onClick={onClick ? (e) => {
-          e.preventDefault();
-          onClick(e);
-        } : undefined}>
+        <Link
+          a
+          to={to}
+          onClick={
+            onClick
+              ? (e) => {
+                  e.preventDefault();
+                  onClick(e);
+                }
+              : undefined
+          }
+        >
           {toTitle || t('View')}
           <Svg set="ibm_16" icon="arrow--right" width={16} height={16} />
         </Link>
@@ -143,11 +163,7 @@ export const ClickCard: React.FC<ClickCardProps> = ({to, toTitle, title, icon, l
   );
 
   if (!noRotate) {
-    element = (
-      <div className={'hoverRotate'}>
-        {element}
-      </div>
-    );
+    element = <div className={'hoverRotate'}>{element}</div>;
   }
 
   return element;
