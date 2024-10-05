@@ -41,7 +41,7 @@
     "load-script": "^2.0.0",
     "md-mdast": "^3.4.0",
     "mdast-flat": "^1.6.0",
-    "nano-theme": "^1.4.1",
+    "nano-theme": "^1.4.3",
     "notistack": "^3.0.1",
     "papaparse": "^5.4.1",
     "react-embed": "^3.7.0",

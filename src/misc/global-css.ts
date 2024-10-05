@@ -12,3 +12,11 @@ put('*:active,button:active,a:active', {
 put('a,button', {
   bdrad: '2px',
 });
+
+put('.hoverRotate', {
+  trs: 'transform .2s',
+  transformOrigin: 'bottom left',
+  '&:hover': {
+    transform: 'rotate(-2deg)',
+  },
+});
