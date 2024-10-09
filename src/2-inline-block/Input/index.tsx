@@ -36,6 +36,7 @@ export interface InputProps {
   isInForm?: boolean;
   style?: any;
   waiting?: boolean;
+  inp?: (input: HTMLInputElement | null) => void;
   onChange?: (value: string) => void;
   onBlur?: () => void;
   onFocus?: () => void;
@@ -105,7 +106,10 @@ export const Input: React.FC<InputProps> = (props) => {
   }
 
   const inputAttr: any = {
-    ref,
+    ref: (input: HTMLInputElement | null) => {
+      ref.current = input;
+      props.inp?.(input);
+    },
     className: inpClass,
     disabled,
     value,
