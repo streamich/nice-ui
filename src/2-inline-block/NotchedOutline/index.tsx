@@ -1,60 +1,20 @@
 import * as React from 'react';
-import {rule, makeRule, theme} from 'nano-theme';
+import {drule, theme, useTheme} from 'nano-theme';
 
-const blockClass = rule({
+const blockClass = drule({
   d: 'block',
   pos: 'relative',
-  bdrad: '4px',
+  bdrad: '6px',
   bxz: 'border-box',
-  mar: '0 0 1px',
-  pad: '0 8px 6px',
+  mr: 0,
+  pd: '0 8px 6px',
 });
 
-const useBlockClass = makeRule((theme) => ({
-  bd: `1px solid ${theme.g(0.7)}`,
-  '&:hover': {
-    bd: `1px solid ${theme.g(0.5)}`,
-  },
-}));
-
-const useBlockActiveClass = makeRule((theme) => ({
-  mar: 0,
-  pad: '0 7px',
-  bd: `2px solid ${theme.color.sem.positive[1]}`,
-  '&:hover': {
-    bd: `2px solid ${theme.color.sem.positive[1]}`,
-  },
-}));
-
-const useBlockDisabledClass = makeRule((theme) => ({
-  mar: '0 0 1px',
-  pad: '0 8px',
-  bd: `1px solid ${theme.g(0.3)}`,
-  '&:hover': {
-    bd: `1px solid ${theme.g(0.3)}`,
-  },
-}));
-
-const legendClass = rule({
+const legendClass = drule({
   ...theme.font.ui3.mid,
   pad: '0 5px',
   fz: '12px',
 });
-
-const useLegendClass = makeRule((theme) => ({
-  col: theme.g(0.7),
-  'fieldset:hover &': {
-    col: theme.g(0.5),
-  },
-}));
-
-const useLegendActiveClass = makeRule((theme) => ({
-  col: theme.g(0.3),
-}));
-
-const useLegendDisabledClass = makeRule((theme) => ({
-  col: theme.g(0.6),
-}));
 
 export interface NotchedOutlineProps {
   className?: string;
@@ -65,33 +25,44 @@ export interface NotchedOutlineProps {
 }
 
 export const NotchedOutline: React.FC<NotchedOutlineProps> = ({className = '', label, active, disabled, children}) => {
-  const dynamicBlockClass = useBlockClass();
-  const dynamicBlockActiveClass = useBlockActiveClass();
-  const dynamicLegendClass = useLegendClass();
-  const dynamicLegendActiveClass = useLegendActiveClass();
+  const theme = useTheme();
 
   return (
     <fieldset
       className={
         className +
-        blockClass +
-        dynamicBlockClass +
-        (active && !disabled ? dynamicBlockActiveClass : '') +
-        (disabled ? useBlockDisabledClass : '')
+        blockClass({
+          bd: disabled ? `1px dotted ${theme.g(0.8)}` : active ? `1px solid ${theme.color.sem.positive[1]}` : `1px solid ${theme.g(0.7)}`,
+          bxsh: active && !disabled ? `0 0 0 1px ${theme.color.sem.positive[1]}` : 'none',
+          '& *': {
+            op: disabled ? 0.5 : 1,
+          },
+          '&:hover': {
+            bd: disabled ? `1px solid ${theme.g(0.8)}` : active ? `1px solid ${theme.color.sem.positive[2]}` : `1px solid ${theme.g(0.5)}`,
+            bxsh: active && !disabled ? `0 0 0 2px ${theme.color.sem.positive[2]}` : 'none',
+            '& *': {
+              op: 1,
+            },
+          },
+        })
       }
     >
-      {!!label && (
-        <legend
-          className={
-            legendClass +
-            dynamicLegendClass +
-            (active && !disabled ? dynamicLegendActiveClass : '') +
-            (disabled ? useLegendDisabledClass : '')
-          }
-        >
-          {label}
-        </legend>
-      )}
+      <legend
+        className={
+          legendClass({
+            bg: active ? theme.bg : 'transparent',
+            col: disabled ? theme.g(0.6) : active ? theme.g(0.3) : theme.g(0.5),
+            'fieldset:hover &': {
+              col: disabled ? theme.g(0.6) : active ? theme.g(0.1) : theme.g(0.5),
+            },
+          })
+        }
+        style={{
+          padding: label ? undefined: 0,
+        }}
+      >
+        {label || '\uFEFF'}
+      </legend>
       {children}
     </fieldset>
   );
