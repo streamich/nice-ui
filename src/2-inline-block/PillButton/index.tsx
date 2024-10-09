@@ -6,8 +6,8 @@ const blockClass = rule({
   ...theme.font.ui2.bold,
   fz: '17.6px',
   col: theme.g(0.4),
-  pad: '9px 18px 8px',
-  mar: '0 2px',
+  pd: '9px 18px 8px',
+  mr: '0 2px',
   bdrad: '16px',
   svg: {
     fill: theme.g(0.4),
