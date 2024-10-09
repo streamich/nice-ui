@@ -25,6 +25,8 @@ const Demo: React.FC<InputProps> = (props) => {
       <Component disabled value={value} onChange={value => setValue(value)} {...props} />
       <br />
       <Component disabled label={'Disabled with label'} value={value} onChange={value => setValue(value)} {...props} />
+      <br />
+      <Component waiting value={value} onChange={value => setValue(value)} {...props} />
     </div>
   );
 };
