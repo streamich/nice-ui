@@ -40,3 +40,26 @@ export const Primary: StoryObj<typeof meta> = {
 export const Interactive: StoryObj<typeof meta> = {
   render: (args) => <Demo {...args} />,
 };
+
+const DemoSizes: React.FC<InputProps> = (props) => {
+  const [value, setValue] = React.useState(props.value);
+
+  return (
+    <div>
+      <Component size={2} label={'My label'} value={value} onChange={value => setValue(value)} {...props} />
+      <br />
+      <Component size={1} label={'My label'} value={value} onChange={value => setValue(value)} {...props} />
+      <br />
+      <Component size={0} label={'My label'} value={value} onChange={value => setValue(value)} {...props} />
+      <br />
+      <Component size={-1} label={'My label'} value={value} onChange={value => setValue(value)} {...props} />
+      <br />
+      <Component size={-2} label={'My label'} value={value} onChange={value => setValue(value)} {...props} />
+      <br />
+    </div>
+  );
+};
+
+export const SizeScale: StoryObj<typeof meta> = {
+  render: (args) => <DemoSizes {...args} />,
+};

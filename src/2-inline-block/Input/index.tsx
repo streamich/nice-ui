@@ -4,8 +4,10 @@ import {SpinnerBars} from '../SpinnerBars';
 import {NotchedOutline} from '../NotchedOutline';
 import {Split} from '../../3-list-item/Split';
 
+const font = theme.font.ui2;
+
 const inpClass = rule({
-  ...theme.font.ui2.bold,
+  ...font.bold,
   fz: '15px',
   lh: '1.4em',
   d: 'block',
@@ -44,7 +46,7 @@ export interface InputProps {
 }
 
 export const Input: React.FC<InputProps> = (props) => {
-  const {disabled, value = '', onPaste, label, readOnly, type = 'text', waiting} = props;
+  const {disabled, value = '', onPaste, label, size, readOnly, type = 'text', waiting} = props;
   const [focus, setFocus] = useState(false);
   const ref = useRef<HTMLInputElement | null>(null);
 
@@ -79,12 +81,25 @@ export const Input: React.FC<InputProps> = (props) => {
     rightIcon = <SpinnerBars />;
   }
 
+  const style: React.CSSProperties = {};
+
+  if (size) {
+    const factor = size < 0 ? 1 : 2;
+    style.fontSize = `${15 + size * factor}px`;
+    style.paddingTop = `${4 + size * factor}px`;
+    style.paddingBottom = `${4 + size * factor}px`;
+    if (size < 0) {
+      style.fontWeight = font.mid.fw;
+    }
+  }
+
   const inputAttr: any = {
     ref: (input: HTMLInputElement | null) => {
       ref.current = input;
       props.inp?.(input);
     },
     className: inpClass,
+    style,
     disabled,
     value,
     type,
