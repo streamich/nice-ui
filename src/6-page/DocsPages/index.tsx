@@ -24,7 +24,7 @@ export interface Props {
 }
 
 export const DocsPages: React.FC<Props> = (props) => {
-  const {steps, page, top = NiceUiSizes.TopNavHeight + NiceUiSizes.TopNavHeight - 32} = props;
+  const {steps, page, top = NiceUiSizes.TopNavHeight + NiceUiSizes.TopNavHeight - 12} = props;
   const [, ...otherSteps] = steps;
 
   // Preload in the background all children of the current page.
@@ -41,7 +41,7 @@ export const DocsPages: React.FC<Props> = (props) => {
 
   return (
     <Page>
-      <Space size={2} />
+      <Space size={3} />
       <TwoColumnLayout sidebarTopPadding={32} left={<DocsMenu steps={steps} page={page} />} top={top} right={right} />
     </Page>
   );

@@ -11,6 +11,9 @@ const paneClass = rule({
   bdrad: '3px',
   minWidth: '150px',
   trs: 'transform .45s cubic-bezier(.2,2,0,1), opacity .3s',
+  '&:hover': {
+    out: '1px solid rgba(0,0,0,.1)',
+  },
 });
 
 const bodyClass = rule({

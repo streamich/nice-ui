@@ -8,19 +8,19 @@ import {NiceUiSizes} from '../../constants';
 const breakpoint = 1000;
 
 const blockClass = rule({
-  pad: '72px 0 0',
-  marb: '75vh',
+  pd: '72px 0 0',
+  mrb: '75vh',
 });
 
 const paddingClass = rule({
   d: 'flex',
-  flexWrap: 'wrap',
-  justifyContent: 'space-between',
+  fw: 'wrap',
+  jc: 'space-between',
   w: '100%',
   maxW: NiceUiSizes.SiteWidth + 'px',
   bxz: 'border-box',
-  mar: '0 auto',
-  pad: '0 0 36px 0',
+  mr: '0 auto',
+  pd: '36px 0 64px 0',
 });
 
 export interface FooterProps {
@@ -39,25 +39,23 @@ export const Footer: React.FC<FooterProps> = ({narrow, footer, children}) => {
   const isLarge = width > breakpoint;
 
   let element = (
-    <>
-      <div
-        style={{
-          background: theme.g(0.98),
-          margin: isLarge ? (narrow ? '0 64px' : undefined) : '0 16px',
-          padding: isLarge ? '0 64px' : '0 16px',
-          borderRadius: '10px',
-          marginBottom: 100,
-        }}
-        onMouseEnter={() => setHovered(true)}
-        onMouseLeave={() => setHovered(false)}
-      >
-        <div className={paddingClass} style={{display: isMedium ? 'block' : undefined}}>
-          {children}
-        </div>
-        <SeparatorColorful contrast grey={!hovered} />
-        {!!footer && <div style={{display: 'flex', padding: '48px 0 64px', justifyContent: 'center'}}>{footer}</div>}
+    <div
+      style={{
+        background: theme.g(0.98),
+        margin: isLarge ? (narrow ? '0 64px' : undefined) : '0 16px',
+        padding: isLarge ? '0 64px' : '0 16px',
+        borderRadius: '10px',
+        marginBottom: 100,
+      }}
+      onMouseEnter={() => setHovered(true)}
+      onMouseLeave={() => setHovered(false)}
+    >
+      <div className={paddingClass} style={{display: isMedium ? 'block' : undefined}}>
+        {children}
       </div>
-    </>
+      <SeparatorColorful contrast grey={!hovered} />
+      {!!footer && <div style={{display: 'flex', padding: '48px 0 64px', justifyContent: 'center'}}>{footer}</div>}
+    </div>
   );
 
   if (isLarge) {
