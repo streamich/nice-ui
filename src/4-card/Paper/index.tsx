@@ -81,6 +81,7 @@ export const Paper: React.FC<PaperProps> = (props) => {
         ? hoverElevateClass({
             '&:hover': {
               bxsh: '0 3px 5px rgba(0,0,0,.1), 0 10px 20px rgba(0,0,0,.1)',
+              out: '1px solid rgba(0,0,0,.1)',
             },
           })
         : ''),

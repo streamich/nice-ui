@@ -33,11 +33,11 @@ const itemClass = rule({
 });
 
 const useItemClass = makeRule((theme) => ({
-  col: theme.g(0.3),
+  col: theme.g(0.2),
   '&:hover': {
-    col: theme.g(0.3),
+    col: theme.g(0),
     'svg path': {
-      fill: theme.g(0.3),
+      fill: theme.g(0.2),
     },
   },
 }));
