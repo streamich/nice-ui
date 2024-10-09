@@ -23,7 +23,7 @@ const inpClass = rule({
   },
 });
 
-const {createElement: h, useState, useCallback, useRef, useEffect} = React;
+const {useState, useCallback, useRef, useEffect} = React;
 const noop = () => {};
 
 export interface InputProps {

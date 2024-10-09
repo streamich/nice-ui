@@ -18,15 +18,21 @@ const Demo: React.FC<InputProps> = (props) => {
 
   return (
     <div>
-      <Component label={'My label'} value={value} onChange={value => setValue(value)} {...props} />
+      <Component label={'My label'} value={value} onChange={(value) => setValue(value)} {...props} />
       <br />
-      <Component value={value} onChange={value => setValue(value)} {...props} />
+      <Component value={value} onChange={(value) => setValue(value)} {...props} />
       <br />
-      <Component disabled value={value} onChange={value => setValue(value)} {...props} />
+      <Component disabled value={value} onChange={(value) => setValue(value)} {...props} />
       <br />
-      <Component disabled label={'Disabled with label'} value={value} onChange={value => setValue(value)} {...props} />
+      <Component
+        disabled
+        label={'Disabled with label'}
+        value={value}
+        onChange={(value) => setValue(value)}
+        {...props}
+      />
       <br />
-      <Component waiting value={value} onChange={value => setValue(value)} {...props} />
+      <Component waiting value={value} onChange={(value) => setValue(value)} {...props} />
     </div>
   );
 };
@@ -46,15 +52,15 @@ const DemoSizes: React.FC<InputProps> = (props) => {
 
   return (
     <div>
-      <Component size={2} label={'My label'} value={value} onChange={value => setValue(value)} {...props} />
+      <Component size={2} label={'My label'} value={value} onChange={(value) => setValue(value)} {...props} />
       <br />
-      <Component size={1} label={'My label'} value={value} onChange={value => setValue(value)} {...props} />
+      <Component size={1} label={'My label'} value={value} onChange={(value) => setValue(value)} {...props} />
       <br />
-      <Component size={0} label={'My label'} value={value} onChange={value => setValue(value)} {...props} />
+      <Component size={0} label={'My label'} value={value} onChange={(value) => setValue(value)} {...props} />
       <br />
-      <Component size={-1} label={'My label'} value={value} onChange={value => setValue(value)} {...props} />
+      <Component size={-1} label={'My label'} value={value} onChange={(value) => setValue(value)} {...props} />
       <br />
-      <Component size={-2} label={'My label'} value={value} onChange={value => setValue(value)} {...props} />
+      <Component size={-2} label={'My label'} value={value} onChange={(value) => setValue(value)} {...props} />
       <br />
     </div>
   );
