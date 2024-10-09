@@ -27,7 +27,7 @@ const blockSmallScreenClass = rule({
 const asideClass = rule({
   bxz: 'border-box',
   f: `0 1 ${NiceUiSizes.SidebarWidth}px`,
-  w: `${NiceUiSizes.SidebarWidth}px`,
+  w: `${NiceUiSizes.SidebarWidth + padding}px`,
   pd: `0 ${padding}px 0 0`,
   '@media only screen and (max-width: 1000px)': {
     w: '100%',
