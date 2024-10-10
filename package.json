@@ -32,7 +32,7 @@
   },
   "keywords": [],
   "dependencies": {
-    "@material-ui/core": "^4.12.4",
+    "@mui/material": "^5.0.0",
     "clipboard-copy": "^4.0.1",
     "code-colors-react": "^3.2.1",
     "codemirror": "5",
