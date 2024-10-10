@@ -15,11 +15,11 @@ export class ToastService {
 
   public readonly add = (opts: NewToastItemOpts): ToastItemPublic => {
     const stack =
-      opts.right ?? true
-        ? opts.bottom ?? true
+      (opts.right ?? true)
+        ? (opts.bottom ?? true)
           ? this.bottomRight
           : this.topRight
-        : opts.bottom ?? true
+        : (opts.bottom ?? true)
           ? this.bottomLeft
           : this.topLeft;
     const item = stack.add(opts);

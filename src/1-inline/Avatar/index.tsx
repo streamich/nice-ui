@@ -164,7 +164,7 @@ export const Avatar: React.FC<AvatarProps> = (allProps) => {
     (square || emoji ? squareClass : '') +
     (emoji ? emojiClass : '') +
     (post ? postClass : '');
-  props.style = {...props.style} || {};
+  props.style = {...props.style};
 
   if (bold) {
     props.style.fontWeight = 600;
